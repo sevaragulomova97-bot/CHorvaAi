@@ -1,0 +1,2075 @@
+{
+  "version": 1,
+  "note": "Ma’lumotlar ilmiy-amaliy qo‘llanmalar va zot standartlariga asoslangan o‘rtacha (taxminiy) ko‘rsatkichlar. Aniq ratsion, dori va emlash bo‘yicha tuman veterinariya mutaxassisiga murojaat qiling.",
+  "sources": {
+    "fao": {
+      "name": "FAO DAD-IS — hayvon zotlari axborot tizimi",
+      "url": "https://www.fao.org/dad-is"
+    },
+    "woah": {
+      "name": "WOAH — Jahon hayvonlar salomatligi tashkiloti",
+      "url": "https://www.woah.org"
+    },
+    "merck": {
+      "name": "Merck Veterinary Manual",
+      "url": "https://www.merckvetmanual.com"
+    },
+    "aviagen": {
+      "name": "Aviagen — Ross 308 texnik qo‘llanmasi",
+      "url": "https://www.aviagen.com"
+    },
+    "aviagent": {
+      "name": "Aviagen Turkeys — BUT 6 qo‘llanmasi",
+      "url": "https://www.aviagenturkeys.com"
+    },
+    "lohmann": {
+      "name": "Lohmann Breeders — Lohmann Brown qo‘llanmasi",
+      "url": "https://lohmann-breeders.com"
+    },
+    "uzvet": {
+      "name": "O‘zbekiston Respublikasi Veterinariya va chorvachilikni rivojlantirish qo‘mitasi tavsiyalari",
+      "url": ""
+    }
+  },
+  "groups": {
+    "uy": {
+      "name": "Uy hayvonlari",
+      "icon": "🐄"
+    },
+    "parranda": {
+      "name": "Parrandalar",
+      "icon": "🐔"
+    }
+  },
+  "species": {
+    "qoramol": {
+      "name": "Qoramol",
+      "emoji": "🐄",
+      "group": "uy",
+      "illus": "cow",
+      "measure": "girth",
+      "divisor": 10838,
+      "ration_pct": [
+        2.5,
+        3.5
+      ],
+      "size_label": "Yag‘rindagi bo‘yi",
+      "ration": {
+        "intro": "Qoramol kavsh qaytaruvchi hayvon: ratsionning asosini dag‘al va shirali ozuqa tashkil qiladi, konsentrat esa mahsuldorlikka qarab qo‘shiladi.",
+        "items": [
+          "Dag‘al ozuqa: beda pichani, somon (bug‘doy, arpa), makkajo‘xori poyasi",
+          "Shirali ozuqa: makkajo‘xori silosi, senaj, xashaki lavlagi, ko‘k o‘t (yozda)",
+          "Konsentratlar: arpa, makkajo‘xori doni, bug‘doy kepagi, paxta kunjarasi yoki shroti, omuxta yem",
+          "Mineral qo‘shimchalar: osh tuzi, yalama tosh, bo‘r, premiks",
+          "Toza suv har doim bo‘lishi shart: sog‘in sigir kuniga 60–100 litr ichadi"
+        ],
+        "daily_title": "Sog‘in sigir (500 kg, kuniga 15 l sut) uchun kunlik norma",
+        "daily": [
+          [
+            "Beda pichani",
+            "6–8 kg"
+          ],
+          [
+            "Makkajo‘xori silosi",
+            "15–20 kg"
+          ],
+          [
+            "Somon",
+            "2–3 kg"
+          ],
+          [
+            "Xashaki lavlagi",
+            "8–10 kg"
+          ],
+          [
+            "Konsentrat (arpa, makkajo‘xori, kepak, kunjara)",
+            "har 1 litr sutga 300–400 g"
+          ],
+          [
+            "Osh tuzi",
+            "60–80 g"
+          ],
+          [
+            "Premiks / mineral",
+            "50–100 g"
+          ],
+          [
+            "Suv",
+            "60–100 l"
+          ]
+        ]
+      },
+      "fattening": {
+        "intro": "Bo‘rdoqiga boqish — 3–6 oy davomida yosh buqachalarni intensiv oziqlantirib, go‘sht uchun tez semirtirish.",
+        "steps": [
+          "Bo‘rdoqiga 12–18 oylik, 250–350 kg vazndagi sog‘lom buqachalar tanlanadi.",
+          "Boshlashdan oldin veterinar ko‘rigi, gijjaga qarshi ishlov va zarur emlashlar o‘tkaziladi.",
+          "Moslashish davri (10–14 kun): asosan pichan beriladi, konsentrat kuniga 1 kg dan asta-sekin oshiriladi.",
+          "Asosiy davr (60–90 kun): silos 15–25 kg, pichan 3–5 kg, konsentrat tirik vaznning 1–1,5 foizi.",
+          "Yakuniy davr (30–45 kun): energiyaga boy don (arpa, makkajo‘xori) ulushi oshiriladi, harakat cheklanadi.",
+          "Oziqlantirish kuniga 2–3 mahal, bir xil vaqtda; ozuqani birdan almashtirmang — bu shishish (timpaniya)ga olib keladi.",
+          "Har 30 kunda vaznni o‘lchab boring: yaxshi bo‘rdoqida kunlik o‘sish 800–1200 g bo‘ladi."
+        ],
+        "supplements": [
+          "Paxta kunjarasi yoki shroti — arzon oqsil manbai (gossipol sababli kuniga 1–1,5 kg dan oshirmang)",
+          "Ozuqa achitqisi (drojji) — hazmni yaxshilaydi",
+          "Premiks (A, D, E vitaminlari va mikroelementlar)",
+          "Bo‘r yoki fosfatli mineral qo‘shimcha, osh tuzi"
+        ],
+        "warning": "Gormonli va antibiotikli o‘sish stimulyatorlari taqiqlangan hamda inson salomatligi uchun xavfli."
+      },
+      "vaccines": [
+        {
+          "from_d": 10,
+          "age": "10–15 kunlik",
+          "name": "Salmonellyoz (paratif)",
+          "note": "8–10 kun oraliq bilan 2 marta"
+        },
+        {
+          "from_d": 30,
+          "age": "1–3 oylik",
+          "name": "Pasterellyoz",
+          "note": "15–20 kundan keyin takrorlanadi"
+        },
+        {
+          "from_d": 90,
+          "age": "3 oylikdan",
+          "name": "Kuydirgi (sibir yarasi)",
+          "note": "Yiliga 1 marta, majburiy"
+        },
+        {
+          "from_d": 90,
+          "age": "3–4 oylikdan",
+          "name": "Oqsil (yashur)",
+          "note": "Har 6 oyda takrorlanadi"
+        },
+        {
+          "from_d": 90,
+          "age": "3–6 oylik",
+          "name": "Emkar (qorason)",
+          "note": "Yiliga 1 marta"
+        },
+        {
+          "from_d": 120,
+          "age": "4–8 oylik g‘unajinlar",
+          "name": "Brutsellyoz",
+          "note": "Faqat hududning epizootik holatiga qarab, veterinar qarori bilan"
+        },
+        {
+          "from_d": 180,
+          "age": "6 oylikdan",
+          "name": "Nodulyar dermatit",
+          "note": "Yiliga 1 marta"
+        },
+        {
+          "from_d": 90,
+          "age": "Har 3–6 oyda",
+          "name": "Gijjaga qarshi ishlov (degelmintizatsiya)",
+          "note": "Bahor va kuzda albatta"
+        }
+      ]
+    },
+    "qoy": {
+      "name": "Qo‘y",
+      "emoji": "🐑",
+      "group": "uy",
+      "illus": "sheep",
+      "measure": "girth",
+      "divisor": 10838,
+      "ration_pct": [
+        3,
+        4
+      ],
+      "size_label": "Yag‘rindagi bo‘yi",
+      "ration": {
+        "intro": "Qo‘ylar yaylovdan yaxshi foydalanadi; qishda va bo‘g‘ozlik davrida qo‘shimcha oziqlantirish muhim.",
+        "items": [
+          "Yaylov o‘ti (bahor-yoz-kuz), qishda beda pichani va somon",
+          "Shirali ozuqa: silos, xashaki lavlagi, oshqovoq",
+          "Konsentrat: maydalangan arpa, makkajo‘xori, kepak, kunjara",
+          "Osh tuzi va yalama tosh doimo qo‘yilsin",
+          "Suv: kuniga 4–8 litr (issiqda ko‘proq)"
+        ],
+        "daily_title": "Katta qo‘y (60–70 kg) uchun qishki kunlik norma",
+        "daily": [
+          [
+            "Beda pichani",
+            "1,5–2 kg"
+          ],
+          [
+            "Somon",
+            "0,5 kg"
+          ],
+          [
+            "Silos yoki lavlagi",
+            "2–3 kg"
+          ],
+          [
+            "Konsentrat (arpa, kepak)",
+            "0,3–0,5 kg (bo‘g‘oz va emizikli sovliqlarga 0,5–0,7 kg)"
+          ],
+          [
+            "Osh tuzi",
+            "10–15 g"
+          ],
+          [
+            "Suv",
+            "4–8 l"
+          ]
+        ]
+      },
+      "fattening": {
+        "intro": "Qo‘zilarni bo‘rdoqiga boqish 60–90 kun davom etadi; dumbali zotlar (Hisori, Edilbay) ayniqsa tez semiradi.",
+        "steps": [
+          "4–6 oylik, sog‘lom, yaxshi rivojlangan qo‘zilar (erkaklari) tanlanadi.",
+          "Gijjaga qarshi ishlov beriladi, tuyoqlar tozalanadi, zarur emlashlar qilinadi.",
+          "Birinchi 10 kun — moslashish: pichan erkin, konsentrat kuniga 100–200 g dan boshlanadi.",
+          "Asosiy davr: konsentrat 0,5–1 kg (maydalangan arpa, makkajo‘xori + 100–150 g kunjara), pichan erkin.",
+          "Qo‘ra quruq, shamolsiz, qishda iliq bo‘lsin; bitta bosh uchun 0,8–1 m² joy kifoya.",
+          "Kunlik o‘sish 200–300 g bo‘lsa, bo‘rdoqi to‘g‘ri ketmoqda; 2 haftada bir marta vaznni o‘lchang."
+        ],
+        "supplements": [
+          "Paxta kunjarasi (kuniga 150 g gacha) yoki no‘xat — oqsil manbai",
+          "Osh tuzi va mineral yalama tosh",
+          "Premiks — A, D, E vitaminlari (ayniqsa qishda)"
+        ],
+        "warning": "Konsentratni birdaniga ko‘paytirish atsidoz va enterotoksemiyaga sabab bo‘ladi — asta-sekin oshiring."
+      },
+      "vaccines": [
+        {
+          "from_d": 0,
+          "age": "Qo‘zilashdan 2–4 hafta oldin (sovliqlar)",
+          "name": "Enterotoksemiya va klostridiozlar (bradzot, qoqshol)",
+          "note": "Polivalent vaksina; qo‘zilarni og‘iz suti orqali himoyalaydi"
+        },
+        {
+          "from_d": 60,
+          "age": "2–3 oylik",
+          "name": "Qo‘y chechagi",
+          "note": "Yiliga 1 marta"
+        },
+        {
+          "from_d": 90,
+          "age": "3 oylikdan",
+          "name": "Kuydirgi (sibir yarasi)",
+          "note": "Yiliga 1 marta, majburiy"
+        },
+        {
+          "from_d": 90,
+          "age": "3–4 oylikdan",
+          "name": "Oqsil (yashur)",
+          "note": "Har 6 oyda"
+        },
+        {
+          "from_d": 90,
+          "age": "3 oylikdan",
+          "name": "Mayda kavsh qaytaruvchilar o‘lati (PPR)",
+          "note": "Davlat dasturi bo‘yicha"
+        },
+        {
+          "from_d": 90,
+          "age": "3–8 oylik urg‘ochi qo‘zilar",
+          "name": "Brutsellyoz (Rev-1)",
+          "note": "Hudud holatiga qarab, veterinar qarori bilan"
+        },
+        {
+          "from_d": 120,
+          "age": "Qirqimdan keyin",
+          "name": "Teri parazitlari (qo‘tir)ga qarshi cho‘miltirish",
+          "note": "Profilaktik ishlov"
+        },
+        {
+          "from_d": 60,
+          "age": "Bahor va kuz",
+          "name": "Gijjaga qarshi ishlov",
+          "note": "Yiliga kamida 2 marta"
+        }
+      ]
+    },
+    "echki": {
+      "name": "Echki",
+      "emoji": "🐐",
+      "group": "uy",
+      "illus": "goat",
+      "measure": "girth",
+      "divisor": 10838,
+      "ration_pct": [
+        3,
+        4.5
+      ],
+      "size_label": "Yag‘rindagi bo‘yi",
+      "ration": {
+        "intro": "Echkilar butalar, daraxt barglari va dag‘al o‘tlarni yaxshi yeydi; sog‘in echkilarga konsentrat sut miqdoriga qarab beriladi.",
+        "items": [
+          "Yaylov, beda pichani, daraxt novdalari (tol, terak, tut barglari)",
+          "Shirali ozuqa: lavlagi, sabzi, oshqovoq, silos",
+          "Konsentrat: arpa, makkajo‘xori, kepak, kunjara",
+          "Osh tuzi, bo‘r, yalama tosh",
+          "Toza suv: kuniga 5–10 litr"
+        ],
+        "daily_title": "Sog‘in echki (55 kg, kuniga 2–3 l sut) uchun kunlik norma",
+        "daily": [
+          [
+            "Beda pichani",
+            "1,5–2,5 kg"
+          ],
+          [
+            "Novda, barg yoki ko‘k o‘t",
+            "1–3 kg"
+          ],
+          [
+            "Lavlagi / sabzi",
+            "1–2 kg"
+          ],
+          [
+            "Konsentrat",
+            "0,3–0,5 kg + har 1 litr sutga 0,25 kg"
+          ],
+          [
+            "Osh tuzi",
+            "10–15 g"
+          ],
+          [
+            "Suv",
+            "5–10 l"
+          ]
+        ]
+      },
+      "fattening": {
+        "intro": "Go‘sht uchun 4–8 oylik uloqlar 60–90 kun bo‘rdoqiga boqiladi.",
+        "steps": [
+          "Sog‘lom, faol uloqlar tanlanadi; gijjaga qarshi ishlov beriladi.",
+          "Pichan va novda erkin, konsentrat kuniga 200 g dan boshlanib 400–600 g gacha oshiriladi.",
+          "Echkilar namlikni yomon ko‘radi: qo‘ra quruq va shamollatiladigan bo‘lsin.",
+          "Kunlik o‘sish 100–200 g — yaxshi natija."
+        ],
+        "supplements": [
+          "Kunjara yoki no‘xat (oqsil)",
+          "Mineral yalama tosh",
+          "Vitaminli premiks"
+        ],
+        "warning": "Echkilar ozuqani tez almashtirishga sezgir — yangi ozuqani 7–10 kun davomida asta-sekin kiriting."
+      },
+      "vaccines": [
+        {
+          "from_d": 0,
+          "age": "Tug‘ishdan 2–4 hafta oldin (ona echkilar)",
+          "name": "Enterotoksemiya va qoqshol",
+          "note": "Polivalent vaksina"
+        },
+        {
+          "from_d": 60,
+          "age": "2–3 oylik",
+          "name": "Echki chechagi",
+          "note": "Yiliga 1 marta"
+        },
+        {
+          "from_d": 90,
+          "age": "3 oylikdan",
+          "name": "Kuydirgi (sibir yarasi)",
+          "note": "Yiliga 1 marta, majburiy"
+        },
+        {
+          "from_d": 90,
+          "age": "3–4 oylikdan",
+          "name": "Oqsil (yashur)",
+          "note": "Har 6 oyda"
+        },
+        {
+          "from_d": 90,
+          "age": "3 oylikdan",
+          "name": "Mayda kavsh qaytaruvchilar o‘lati (PPR)",
+          "note": "Davlat dasturi bo‘yicha"
+        },
+        {
+          "from_d": 90,
+          "age": "3–8 oylik urg‘ochilar",
+          "name": "Brutsellyoz (Rev-1)",
+          "note": "Hudud holatiga qarab"
+        },
+        {
+          "from_d": 60,
+          "age": "Bahor va kuz",
+          "name": "Gijjaga qarshi ishlov",
+          "note": "Yiliga kamida 2 marta"
+        }
+      ]
+    },
+    "ot": {
+      "name": "Ot",
+      "emoji": "🐎",
+      "group": "uy",
+      "illus": "horse",
+      "measure": "girth",
+      "divisor": 11880,
+      "ration_pct": [
+        1.5,
+        2.5
+      ],
+      "size_label": "Yag‘rindagi bo‘yi",
+      "ration": {
+        "intro": "Ot bir kamerali oshqozonli o‘txo‘r: ozuqani oz-ozdan, kuniga 3–4 mahal berish kerak.",
+        "items": [
+          "Asosiy ozuqa: sifatli pichan (beda + boshoqli o‘tlar), yaylov",
+          "Don: suli, arpa (ishlash darajasiga qarab), ozroq makkajo‘xori",
+          "Shirali ozuqa: sabzi, lavlagi",
+          "Osh tuzi yalama tosh shaklida",
+          "Suv: kuniga 30–50 litr, ish va issiqda ko‘proq"
+        ],
+        "daily_title": "O‘rta ishdagi ot (450 kg) uchun kunlik norma",
+        "daily": [
+          [
+            "Pichan",
+            "8–12 kg"
+          ],
+          [
+            "Suli yoki arpa",
+            "2–4 kg"
+          ],
+          [
+            "Sabzi",
+            "1–2 kg"
+          ],
+          [
+            "Osh tuzi",
+            "30–50 g"
+          ],
+          [
+            "Suv",
+            "30–50 l"
+          ]
+        ]
+      },
+      "fattening": {
+        "intro": "Otlar asosan minish va ulov uchun boqiladi; ayrim xo‘jaliklarda go‘sht (qazi) uchun 2–3 oy semirtiriladi.",
+        "steps": [
+          "Semirtirishga sog‘lom, tishlari yaxshi otlar tanlanadi; tishlar tekshiriladi.",
+          "Pichan erkin beriladi, don (arpa, makkajo‘xori) kuniga 3–5 kg gacha asta-sekin oshiriladi.",
+          "Ozuqa kuniga 3–4 mahalga bo‘lib beriladi — bu sanchiq (kolika)ning oldini oladi.",
+          "Harakat kamaytiriladi, otxona toza va quruq saqlanadi."
+        ],
+        "supplements": [
+          "Osh tuzi va mineral premiks",
+          "Kepak bo‘tqasi (hazm uchun)",
+          "Sabzi (A vitamini)"
+        ],
+        "warning": "Ot ovqatlangandan keyin darhol og‘ir ishga solinmaydi; mog‘orlagan pichan berish qat’iyan mumkin emas."
+      },
+      "vaccines": [
+        {
+          "from_d": 120,
+          "age": "4–6 oylik toylar",
+          "name": "Ot grippi (influenza)",
+          "note": "4–6 hafta oraliq bilan 2 marta, keyin har 6–12 oyda"
+        },
+        {
+          "from_d": 120,
+          "age": "4–6 oylik",
+          "name": "Qoqshol (tetanus)",
+          "note": "2 marta, keyin yiliga 1 marta"
+        },
+        {
+          "from_d": 90,
+          "age": "3 oylikdan",
+          "name": "Kuydirgi (sibir yarasi)",
+          "note": "Yiliga 1 marta, majburiy"
+        },
+        {
+          "from_d": 150,
+          "age": "5–6 oylikdan",
+          "name": "Rinopnevmoniya (EHV)",
+          "note": "Ayniqsa bo‘g‘oz biyalar uchun, veterinar jadvali bo‘yicha"
+        },
+        {
+          "from_d": 180,
+          "age": "Yiliga 1–2 marta",
+          "name": "Manqa (sap) — tekshiruv",
+          "note": "Bu vaksina emas, majburiy diagnostik tekshiruv"
+        },
+        {
+          "from_d": 60,
+          "age": "Bahor va kuz",
+          "name": "Gijjaga qarshi ishlov",
+          "note": "Yiliga 2–4 marta"
+        }
+      ]
+    },
+    "quyon": {
+      "name": "Quyon",
+      "emoji": "🐇",
+      "group": "uy",
+      "illus": "rabbit",
+      "measure": "scale",
+      "ration_pct": [
+        4,
+        6
+      ],
+      "size_label": "Tana uzunligi",
+      "ration": {
+        "intro": "Quyonlar kuniga 30 martagacha ovqatlanadi: pichan va suv doimo bo‘lishi kerak.",
+        "items": [
+          "Pichan (beda, boshoqli o‘tlar) — doimo, erkin",
+          "Granulalangan omuxta yem (quyonlar uchun)",
+          "Ko‘k o‘t (so‘litib beriladi), sabzi, lavlagi, oshqovoq",
+          "Novdalar (tol, olma, tut) — tishlarni charxlash uchun",
+          "Toza suv doimo, mineral yalama tosh"
+        ],
+        "daily_title": "Katta quyon (4–5 kg) uchun kunlik norma",
+        "daily": [
+          [
+            "Pichan",
+            "150–300 g (erkin)"
+          ],
+          [
+            "Granulalangan yem",
+            "120–180 g"
+          ],
+          [
+            "Sabzi / ildizmeva",
+            "100–200 g"
+          ],
+          [
+            "Ko‘k o‘t (yozda)",
+            "0,5–1 kg"
+          ],
+          [
+            "Suv",
+            "0,3–0,5 l (emizikli urg‘ochiga 1–1,5 l)"
+          ]
+        ]
+      },
+      "fattening": {
+        "intro": "Go‘sht uchun quyonlar 2–3 oylikdan 90–100 kunlikkacha bo‘rdoqiga boqiladi.",
+        "steps": [
+          "60–70 kunlik quyonlar alohida, kichik guruhlarda saqlanadi.",
+          "Granulalangan yem erkin beriladi, pichan doimo bo‘ladi.",
+          "Oxirgi 2–3 haftada qaynatilgan kartoshka, makkajo‘xori va arpa ulushi oshiriladi.",
+          "Katakni toza saqlash koksidiozning oldini oladi.",
+          "Kunlik o‘sish 30–40 g; 90–100 kunda 2,5–3 kg vaznga yetadi."
+        ],
+        "supplements": [
+          "Mineral yalama tosh",
+          "Bo‘r va suyak uni (oz miqdorda)",
+          "Vitaminli premiks"
+        ],
+        "warning": "Ho‘l yoki shudringli o‘t, mog‘orlagan ozuqa shishishga sabab bo‘ladi — o‘tni so‘litib bering."
+      },
+      "vaccines": [
+        {
+          "from_d": 30,
+          "age": "30–45 kunlik",
+          "name": "Miksomatoz",
+          "note": "Keyin har 6 oyda"
+        },
+        {
+          "from_d": 45,
+          "age": "45 kunlik",
+          "name": "Virusli gemorragik kasallik (VGBK)",
+          "note": "Keyin har 6–12 oyda; assotsiatsiyalangan vaksina ham bor"
+        },
+        {
+          "from_d": 60,
+          "age": "Yiliga 1–2 marta",
+          "name": "Pasterellyoz",
+          "note": "Hududda xavf bo‘lsa"
+        },
+        {
+          "from_d": 21,
+          "age": "Har 3–4 oyda",
+          "name": "Koksidiozga qarshi profilaktika",
+          "note": "Veterinar tavsiyasi bilan"
+        }
+      ]
+    },
+    "tovuq": {
+      "name": "Tovuq",
+      "emoji": "🐔",
+      "group": "parranda",
+      "illus": "chicken",
+      "measure": "scale",
+      "ration_pct": [
+        5,
+        7
+      ],
+      "size_label": "Bo‘yi",
+      "ration": {
+        "intro": "Tovuqlar yoshiga va yo‘nalishiga (go‘sht yoki tuxum) qarab turli omuxta yem bilan boqiladi.",
+        "items": [
+          "Broylerlar: start (0–10 kun), o‘sish (11–24 kun) va yakuniy (25 kundan) omuxta yemlar",
+          "Tuxumdor tovuqlar: tuxumdorlar uchun omuxta yem (oqsil 16–17 %, kalsiy 3,5–4 %)",
+          "Xonaki tovuqlar: bug‘doy, arpa, makkajo‘xori aralashmasi + ko‘kat + ho‘l aralashma",
+          "Chig‘anoq, bo‘r, mayda shag‘al (gastrolit)",
+          "Toza suv doimo: tovuq kuniga 200–300 ml ichadi"
+        ],
+        "daily_title": "Kunlik yem normasi (bitta parranda uchun)",
+        "daily": [
+          [
+            "Broyler, 1-hafta",
+            "20–25 g"
+          ],
+          [
+            "Broyler, 3-hafta",
+            "90–100 g"
+          ],
+          [
+            "Broyler, 6-hafta",
+            "180–200 g"
+          ],
+          [
+            "Tuxumdor tovuq",
+            "110–125 g"
+          ],
+          [
+            "Xonaki tovuq (don + ko‘kat)",
+            "100–130 g"
+          ],
+          [
+            "Suv",
+            "200–300 ml (issiqda 2 baravar)"
+          ]
+        ]
+      },
+      "fattening": {
+        "intro": "Broylerlar 35–42 kunda so‘yish vazniga yetadi; asosiy sir — harorat, yorug‘lik va sifatli start yem.",
+        "steps": [
+          "Joja kelguncha xona 32–33 °C gacha isitiladi; har hafta harorat 2–3 °C ga tushirilib, 20–22 °C da ushlanadi.",
+          "Birinchi hafta yorug‘lik 23 soat, keyin 18–20 soat (qorong‘i davr suyak va yurakni sog‘lom qiladi).",
+          "Zichlik: 1 m² ga 12–15 bosh; to‘shama quruq bo‘lsin.",
+          "Start yem birinchi 10 kunda — keyingi o‘sishning asosi; yem va suv to‘xtovsiz bo‘lsin.",
+          "Suvga birinchi 3–5 kun vitamin va elektrolit qo‘shiladi.",
+          "Shamollatish yaxshi bo‘lsin: ammiak hidi o‘sishni sekinlashtiradi.",
+          "Xonaki tovuqlarni so‘yishdan 2–3 hafta oldin makkajo‘xori va ho‘l aralashma bilan semirtiring."
+        ],
+        "supplements": [
+          "Vitamin-elektrolit kompleksi (suvga)",
+          "Chig‘anoq yoki bo‘r (tuxumdorlarga)",
+          "Probiotiklar (ichak sog‘lig‘i uchun)"
+        ],
+        "warning": "Antibiotiklarni o‘sish uchun ishlatmang — faqat veterinar tashxisi bilan davolashda qo‘llanadi."
+      },
+      "vaccines": [
+        {
+          "from_d": 1,
+          "age": "1 kunlik",
+          "name": "Marek kasalligi",
+          "note": "Odatda inkubatoriyda qilinadi (tuxumdor va xonaki zotlar)"
+        },
+        {
+          "from_d": 1,
+          "age": "1–7 kunlik",
+          "name": "Infeksion bronxit (IB)",
+          "note": "Ko‘z/burun tomchisi yoki spray"
+        },
+        {
+          "from_d": 7,
+          "age": "7–10 kunlik",
+          "name": "Nyukasl kasalligi — 1-emlash",
+          "note": "Ko‘z tomchisi yoki suv bilan"
+        },
+        {
+          "from_d": 12,
+          "age": "12–16 kunlik",
+          "name": "Gamboro (IBD)",
+          "note": "Suv bilan"
+        },
+        {
+          "from_d": 21,
+          "age": "21–28 kunlik",
+          "name": "Nyukasl va Gamboro — takroriy emlash",
+          "note": "Broylerlarda odatda oxirgi emlash"
+        },
+        {
+          "from_d": 42,
+          "age": "6–10 haftalik (tuxumdorlar)",
+          "name": "Parranda chechagi (difteriya)",
+          "note": "Qanot terisiga"
+        },
+        {
+          "from_d": 112,
+          "age": "16–18 haftalik (tuxumdorlar)",
+          "name": "Nyukasl + IB + EDS (inaktivlangan)",
+          "note": "Tuxum qo‘yishdan oldin, mushak ichiga"
+        }
+      ]
+    },
+    "kurka": {
+      "name": "Kurka",
+      "emoji": "🦃",
+      "group": "parranda",
+      "illus": "turkey",
+      "measure": "scale",
+      "ration_pct": [
+        3,
+        5
+      ],
+      "size_label": "Bo‘yi",
+      "ration": {
+        "intro": "Kurka jo‘jalari oqsilga juda talabchan: birinchi haftalarda oqsil 26–28 % li start yem kerak.",
+        "items": [
+          "Kurkalar uchun start, o‘sish va yakuniy omuxta yemlar",
+          "Ko‘kat: beda, qichitqi o‘t, piyoz ko‘ki (to‘g‘ralgan)",
+          "Don: bug‘doy, arpa, makkajo‘xori (katta yoshda)",
+          "Chig‘anoq, bo‘r, mayda shag‘al",
+          "Toza suv doimo"
+        ],
+        "daily_title": "Kunlik yem normasi (bitta kurka uchun)",
+        "daily": [
+          [
+            "1–2 haftalik",
+            "15–40 g"
+          ],
+          [
+            "1 oylik",
+            "100–130 g"
+          ],
+          [
+            "2–3 oylik",
+            "200–300 g"
+          ],
+          [
+            "Katta erkak kurka",
+            "350–450 g"
+          ],
+          [
+            "Ko‘kat",
+            "50–200 g"
+          ]
+        ]
+      },
+      "fattening": {
+        "intro": "Big-6 kurkalari 16–22 haftada so‘yish vazniga yetadi.",
+        "steps": [
+          "Birinchi kunlar harorat 35–36 °C, keyin har hafta 2–3 °C kamaytiriladi.",
+          "Start yemda oqsil 26–28 %; ko‘kat 2-haftadan to‘g‘ralib beriladi.",
+          "Erkak va urg‘ochilarni 8 haftadan alohida boqish o‘sishni tenglashtiradi.",
+          "Sayr uchun maydon va yaxshi shamollatish — oyoq kasalliklarining oldini oladi.",
+          "Har 2 haftada nazorat tortish o‘tkaziladi."
+        ],
+        "supplements": [
+          "Vitamin va aminokislotali qo‘shimchalar",
+          "Chig‘anoq va mineral premiks",
+          "Ko‘kat (beda, qichitqi o‘t)"
+        ],
+        "warning": "Kurkalarni tovuqlar bilan birga boqmang — gistomonoz (qora bosh) kasalligi yuqishi mumkin."
+      },
+      "vaccines": [
+        {
+          "from_d": 1,
+          "age": "1 kunlik",
+          "name": "Nyukasl + IB",
+          "note": "Spray"
+        },
+        {
+          "from_d": 14,
+          "age": "2–3 haftalik",
+          "name": "Nyukasl — takroriy",
+          "note": "Suv bilan"
+        },
+        {
+          "from_d": 28,
+          "age": "4–5 haftalik",
+          "name": "Gemorragik enterit (HE)",
+          "note": "Suv bilan"
+        },
+        {
+          "from_d": 42,
+          "age": "6–8 haftalik",
+          "name": "Pasterellyoz (vabo)",
+          "note": "Hududda xavf bo‘lsa"
+        },
+        {
+          "from_d": 56,
+          "age": "8–10 haftalik",
+          "name": "Parranda chechagi",
+          "note": "Qanot terisiga"
+        }
+      ]
+    },
+    "ordak": {
+      "name": "O‘rdak",
+      "emoji": "🦆",
+      "group": "parranda",
+      "illus": "duck",
+      "measure": "scale",
+      "ration_pct": [
+        5,
+        8
+      ],
+      "size_label": "Bo‘yi",
+      "ration": {
+        "intro": "O‘rdaklar tez o‘sadi va ko‘p yeydi; ho‘l aralashma va suv havzasi o‘sishni tezlashtiradi.",
+        "items": [
+          "Start yem (1–3 hafta, oqsil 20–22 %), keyin o‘sish yemi",
+          "Ho‘l aralashma: maydalangan don + kepak + ko‘kat + sut zardobi",
+          "Suv o‘tlari (ryaska) — arzon va foydali ozuqa",
+          "Chig‘anoq va mayda shag‘al",
+          "Suv chuqur idishda: o‘rdak tumshug‘ini yuvib turishi kerak"
+        ],
+        "daily_title": "Kunlik yem normasi (bitta o‘rdak uchun)",
+        "daily": [
+          [
+            "1-hafta",
+            "20–40 g"
+          ],
+          [
+            "3-hafta",
+            "120–150 g"
+          ],
+          [
+            "6–7 hafta",
+            "200–250 g"
+          ],
+          [
+            "Katta o‘rdak",
+            "250–300 g"
+          ]
+        ]
+      },
+      "fattening": {
+        "intro": "Pekin o‘rdaklari 7–8 haftada 3–3,5 kg ga yetadi; shu davrda so‘yish eng foydali.",
+        "steps": [
+          "Birinchi hafta harorat 28–30 °C, to‘shama quruq bo‘lsin.",
+          "Kuniga 4–6 mahal ho‘l aralashma va yem beriladi.",
+          "So‘yish 50–55 kunlikda — ikkinchi tullash boshlanishidan oldin (aks holda pat ildizlari qoladi).",
+          "Sayr va suv havzasi mavjud bo‘lsa, o‘sish va go‘sht sifati yaxshilanadi."
+        ],
+        "supplements": [
+          "Suv o‘tlari (ryaska)",
+          "Sut zardobi",
+          "Vitaminli premiks"
+        ],
+        "warning": "Quruq yemni suvsiz bermang — o‘rdak jo‘jalari bo‘g‘ilib qolishi mumkin."
+      },
+      "vaccines": [
+        {
+          "from_d": 1,
+          "age": "1–3 kunlik",
+          "name": "O‘rdak virusli gepatiti",
+          "note": "Ayniqsa hududda kasallik qayd etilgan bo‘lsa"
+        },
+        {
+          "from_d": 28,
+          "age": "4–6 haftalik",
+          "name": "Pasterellyoz",
+          "note": "Naslchilik podalarida har 6 oyda takrorlanadi"
+        },
+        {
+          "from_d": 1,
+          "age": "Doimiy",
+          "name": "Salmonellyoz profilaktikasi",
+          "note": "Gigiyena, toza suv va dezinfeksiya"
+        }
+      ]
+    },
+    "goz": {
+      "name": "G‘oz",
+      "emoji": "🦢",
+      "group": "parranda",
+      "illus": "goose",
+      "measure": "scale",
+      "ration_pct": [
+        4,
+        6
+      ],
+      "size_label": "Bo‘yi",
+      "ration": {
+        "intro": "G‘ozlar yaylov o‘tidan eng yaxshi foydalanadigan parranda: yozda ratsionning asosi — ko‘k o‘t.",
+        "items": [
+          "Yaylov o‘ti (beda, sebarga, boshoqlilar)",
+          "Don: arpa, bug‘doy, makkajo‘xori, suli",
+          "Ho‘l aralashma, lavlagi, sabzi, oshqovoq",
+          "Chig‘anoq va shag‘al",
+          "Toza suv va iloji bo‘lsa suv havzasi"
+        ],
+        "daily_title": "Katta g‘oz uchun kunlik norma",
+        "daily": [
+          [
+            "Ko‘k o‘t / yaylov",
+            "1,5–2 kg"
+          ],
+          [
+            "Don aralashmasi",
+            "150–200 g"
+          ],
+          [
+            "Ildizmeva",
+            "200–300 g"
+          ],
+          [
+            "Suv",
+            "1–1,5 l"
+          ]
+        ]
+      },
+      "fattening": {
+        "intro": "G‘oz bolalari 60–70 kunlikda 4–4,5 kg ga yetadi.",
+        "steps": [
+          "Birinchi 3 hafta start yem va mayda to‘g‘ralgan ko‘kat beriladi.",
+          "3-haftadan yaylovga chiqariladi, kechqurun don beriladi.",
+          "Oxirgi 2–3 haftada don ulushi oshiriladi, harakat kamaytiriladi.",
+          "So‘yish 60–70 kunlikda, birinchi tullashdan oldin."
+        ],
+        "supplements": [
+          "Mineral qo‘shimcha va shag‘al",
+          "Vitaminli premiks (qishda)"
+        ],
+        "warning": "Majburan oziqlantirish (jigar uchun) hayvonga og‘riq beradi va tavsiya etilmaydi."
+      },
+      "vaccines": [
+        {
+          "from_d": 1,
+          "age": "1–3 kunlik",
+          "name": "Parvovirus (Derjsi kasalligi) va virusli enterit",
+          "note": "3–4 haftada takrorlanadi"
+        },
+        {
+          "from_d": 21,
+          "age": "3–4 haftalik",
+          "name": "Takroriy emlash",
+          "note": "Parvovirusga qarshi"
+        },
+        {
+          "from_d": 42,
+          "age": "6–8 haftalik",
+          "name": "Pasterellyoz",
+          "note": "Hududda xavf bo‘lsa"
+        },
+        {
+          "from_d": 240,
+          "age": "Tuxum qo‘yishdan 1 oy oldin (ona g‘ozlar)",
+          "name": "Parvovirus — onalarni emlash",
+          "note": "Bolalarni himoyalaydi"
+        }
+      ]
+    },
+    "bedana": {
+      "name": "Bedana",
+      "emoji": "🐦",
+      "group": "parranda",
+      "illus": "quail",
+      "measure": "scale",
+      "ration_pct": [
+        15,
+        20
+      ],
+      "size_label": "Tana uzunligi",
+      "ration": {
+        "intro": "Bedanalar kichik, lekin modda almashinuvi juda tez: yemda oqsil yuqori bo‘lishi kerak.",
+        "items": [
+          "Bedana yoki broyler start yemi (oqsil 24–28 %) — birinchi 3 hafta",
+          "Tuxumdor bedanalar: oqsil 20–24 % li yem",
+          "Mayda to‘g‘ralgan ko‘kat, qaynatilgan tuxum (jo‘jalarga)",
+          "Chig‘anoq uni, mayda qum",
+          "Toza suv doimo"
+        ],
+        "daily_title": "Kunlik yem normasi (bitta bedana uchun)",
+        "daily": [
+          [
+            "1-hafta",
+            "4–8 g"
+          ],
+          [
+            "3-hafta",
+            "15–20 g"
+          ],
+          [
+            "Katta bedana",
+            "25–30 g"
+          ],
+          [
+            "Suv",
+            "40–60 ml"
+          ]
+        ]
+      },
+      "fattening": {
+        "intro": "Go‘sht uchun 6–7 haftada so‘yiladi; Faraon zoti 250–300 g gacha yetadi.",
+        "steps": [
+          "Jo‘jalar uchun harorat 35–37 °C, har hafta 3 °C kamaytiriladi.",
+          "Yorug‘lik: tuxumdorlarga 16–17 soat, go‘shtga boqilganlarga xira yorug‘lik.",
+          "Go‘shtga boqiladigan erkak va urg‘ochilar 4 haftadan alohida saqlanadi.",
+          "Yem doimo bo‘lsin, ammo isrof bo‘lmasligi uchun maxsus oxurlardan foydalaning."
+        ],
+        "supplements": [
+          "Chig‘anoq uni",
+          "Vitaminli premiks",
+          "Ko‘kat"
+        ],
+        "warning": "Shovqin va stress tuxum qo‘yishni keskin kamaytiradi — xona tinch bo‘lsin."
+      },
+      "vaccines": [
+        {
+          "from_d": 20,
+          "age": "20–30 kunlik",
+          "name": "Nyukasl kasalligi",
+          "note": "Faqat hududda xavf bo‘lsa; bedanalar kasalliklarga ancha chidamli"
+        },
+        {
+          "from_d": 1,
+          "age": "Doimiy",
+          "name": "Gigiyena va dezinfeksiya",
+          "note": "Asosiy himoya choralari"
+        }
+      ]
+    }
+  },
+  "breeds": [
+    {
+      "id": "golshtin",
+      "species": "qoramol",
+      "name": "Golshtin",
+      "direction": [
+        "sut"
+      ],
+      "palette": {
+        "body": "#f4f4f2",
+        "patch": "#1f1f1f",
+        "accent": "#e7b7a5",
+        "pattern": "spots"
+      },
+      "profile": {
+        "white": 0.5,
+        "black": 0.31,
+        "grey": 0.1,
+        "gold": 0.07,
+        "aspect": 1.19
+      },
+      "origin": "Gollandiya, AQSh va Kanadada takomillashtirilgan; O‘zbekistonga ko‘plab import qilinmoqda.",
+      "summary": "Dunyodagi eng sersut zot. Qora-ola (oq-qora dog‘li) rangda.",
+      "general": {
+        "weight_f": "600–700 kg",
+        "weight_m": "900–1200 kg",
+        "height": "140–150 sm",
+        "productivity": [
+          "Sut: 7000–10000 kg / laktatsiya (O‘zbekiston sharoitida 5000–7000 kg)",
+          "Sut yog‘liligi: 3,5–3,7 %",
+          "Oqsil: 3,1–3,3 %"
+        ],
+        "features": [
+          "Yuqori sifatli ozuqa va yaxshi parvarish talab qiladi",
+          "Issiqqa chidamliligi o‘rtacha — yozda soya va salqinlatish kerak"
+        ]
+      },
+      "growth": {
+        "birth": 40,
+        "adult_f": 650,
+        "adult_m": 1000,
+        "maturity_d": 910,
+        "adg": [
+          700,
+          1000
+        ]
+      },
+      "tip": "Golshtin buqachalarini bo‘rdoqiga boqish mumkin, ammo go‘sht chiqimi go‘sht zotlariga qaraganda kamroq (50–55 %).",
+      "photo": {
+        "file": "Holstein_cow.jpg",
+        "author": "Hokkaido-man",
+        "license": ""
+      }
+    },
+    {
+      "id": "shvits",
+      "species": "qoramol",
+      "name": "Shvits",
+      "direction": [
+        "sut",
+        "go‘sht"
+      ],
+      "palette": {
+        "body": "#8d7b6a",
+        "patch": "#6f5f50",
+        "accent": "#d9cbbd",
+        "pattern": "plain"
+      },
+      "profile": {
+        "white": 0.08,
+        "grey": 0.06,
+        "brown": 0.84,
+        "aspect": 1.19
+      },
+      "origin": "Shveytsariya (qo‘ng‘ir shveytsariya zoti); O‘zbekistonda keng tarqalgan.",
+      "summary": "Kulrang-qo‘ng‘ir rangli, sut-go‘sht yo‘nalishidagi chidamli zot.",
+      "general": {
+        "weight_f": "550–650 kg",
+        "weight_m": "850–1000 kg",
+        "height": "130–138 sm",
+        "productivity": [
+          "Sut: 4000–6000 kg / laktatsiya",
+          "Sut yog‘liligi: 3,8–4,0 %",
+          "Go‘sht chiqimi: 50–58 %"
+        ],
+        "features": [
+          "Iqlimga yaxshi moslashgan",
+          "Uzoq umr ko‘radi, oyoqlari mustahkam"
+        ]
+      },
+      "growth": {
+        "birth": 36,
+        "adult_f": 600,
+        "adult_m": 950,
+        "maturity_d": 910,
+        "adg": [
+          750,
+          1000
+        ]
+      },
+      "tip": "Shvits buqachalari bo‘rdoqida kuniga 900–1100 g o‘sish beradi.",
+      "photo": {
+        "file": "Brown_Swiss_cow_at_Western_Idaho_Fair_2009.jpg",
+        "author": "Kenneth Freeman",
+        "license": ""
+      }
+    },
+    {
+      "id": "simmental",
+      "species": "qoramol",
+      "name": "Simmental",
+      "direction": [
+        "sut",
+        "go‘sht"
+      ],
+      "palette": {
+        "body": "#c26a2e",
+        "patch": "#f3eee6",
+        "accent": "#e9c3a6",
+        "pattern": "spots"
+      },
+      "profile": {
+        "white": 0.4,
+        "brown": 0.05,
+        "red": 0.32,
+        "gold": 0.19,
+        "aspect": 1.19
+      },
+      "origin": "Shveytsariya; dunyoda eng keng tarqalgan kombinatsiyalangan zotlardan biri.",
+      "summary": "Qizg‘ish-ola, boshi oq, yirik gavdali sut-go‘sht zoti.",
+      "general": {
+        "weight_f": "600–750 kg",
+        "weight_m": "1000–1200 kg",
+        "height": "135–145 sm",
+        "productivity": [
+          "Sut: 4500–6000 kg / laktatsiya",
+          "Sut yog‘liligi: 3,8–4,0 %",
+          "Go‘sht chiqimi: 55–60 %"
+        ],
+        "features": [
+          "Bo‘rdoqiga boqishda juda yaxshi natija beradi",
+          "Tinch fe’lli, parvarishi oson"
+        ]
+      },
+      "growth": {
+        "birth": 40,
+        "adult_f": 680,
+        "adult_m": 1100,
+        "maturity_d": 910,
+        "adg": [
+          900,
+          1300
+        ]
+      },
+      "tip": "Simmental buqachalari intensiv bo‘rdoqida kuniga 1100–1300 g gacha o‘sishi mumkin.",
+      "photo": {
+        "file": "Simmental-vache.JPG",
+        "author": "Grimlock",
+        "license": "CC BY-SA 2.5"
+      }
+    },
+    {
+      "id": "mahalliy_qoramol",
+      "species": "qoramol",
+      "name": "Mahalliy qoramol",
+      "direction": [
+        "sut",
+        "go‘sht"
+      ],
+      "palette": {
+        "body": "#5b3a26",
+        "patch": "#3a2418",
+        "accent": "#c9a38a",
+        "pattern": "plain"
+      },
+      "profile": {
+        "brown": 0.86,
+        "gold": 0.07,
+        "aspect": 1.19
+      },
+      "origin": "O‘zbekistonning mahalliy, xalq seleksiyasi zotlari.",
+      "summary": "Kichik gavdali, issiqqa va kasalliklarga juda chidamli.",
+      "general": {
+        "weight_f": "300–380 kg",
+        "weight_m": "450–550 kg",
+        "height": "115–120 sm",
+        "productivity": [
+          "Sut: 1000–1500 l / laktatsiya",
+          "Sut yog‘liligi: 4,2–4,5 %",
+          "Go‘sht chiqimi: 48–52 %"
+        ],
+        "features": [
+          "Oddiy ozuqa bilan ham mahsulot beradi",
+          "Naslchilikda chatishtirish uchun yaxshi asos"
+        ]
+      },
+      "growth": {
+        "birth": 22,
+        "adult_f": 340,
+        "adult_m": 500,
+        "maturity_d": 1090,
+        "adg": [
+          500,
+          800
+        ]
+      },
+      "tip": "Mahalliy buqachalarni sut zotli buqalar bilan chatishtirish mahsuldorlikni oshiradi.",
+      "photo": {
+        "file": "Крава_,_Cattle_-Cow.JPG",
+        "author": "Jakupica",
+        "license": "",
+        "caption": "Mahalliy tipdagi sigir (namuna rasm)"
+      }
+    },
+    {
+      "id": "hisori",
+      "species": "qoy",
+      "name": "Hisori",
+      "direction": [
+        "go‘sht",
+        "yog‘"
+      ],
+      "palette": {
+        "body": "#b07a50",
+        "patch": "#7a4b2c",
+        "accent": "#3b2a20",
+        "pattern": "plain",
+        "tail": "fat"
+      },
+      "profile": {
+        "grey": 0.04,
+        "brown": 0.19,
+        "gold": 0.77,
+        "aspect": 1.15
+      },
+      "origin": "Hisor vodiysi (Tojikiston, Surxondaryo); dunyodagi eng yirik dumbali qo‘ylardan.",
+      "summary": "Dunyodagi eng yirik go‘sht-yog‘ yo‘nalishidagi dumbali qo‘y.",
+      "general": {
+        "weight_f": "70–90 kg",
+        "weight_m": "110–150 kg (rekord 190 kg)",
+        "height": "80–85 sm",
+        "productivity": [
+          "Dumba: 15–25 kg",
+          "So‘yish chiqimi: 55–60 %",
+          "Jun: 1–1,5 kg (dag‘al)"
+        ],
+        "features": [
+          "Uzoq masofa yaylovga chidamli",
+          "Juda tez semiradi"
+        ]
+      },
+      "growth": {
+        "birth": 5.5,
+        "adult_f": 80,
+        "adult_m": 130,
+        "maturity_d": 545,
+        "adg": [
+          200,
+          300
+        ]
+      },
+      "tip": "Hisori qo‘zilari bo‘rdoqida kuniga 250–350 g gacha vazn qo‘shadi.",
+      "photo": {
+        "file": "Hissarschaf.jpg",
+        "author": "",
+        "license": ""
+      }
+    },
+    {
+      "id": "qorakol",
+      "species": "qoy",
+      "name": "Qorako‘l",
+      "direction": [
+        "teri",
+        "sut",
+        "go‘sht"
+      ],
+      "palette": {
+        "body": "#2c2c2c",
+        "patch": "#1a1a1a",
+        "accent": "#5a5a5a",
+        "pattern": "plain",
+        "tail": "fat"
+      },
+      "profile": {
+        "black": 0.98,
+        "aspect": 1.16
+      },
+      "origin": "Buxoro va Qashqadaryo cho‘llari; O‘zbekistonning faxri hisoblanadi.",
+      "summary": "Qimmatbaho qorako‘l teri beradigan, cho‘l sharoitiga moslashgan zot.",
+      "general": {
+        "weight_f": "45–55 kg",
+        "weight_m": "60–80 kg",
+        "height": "70–75 sm",
+        "productivity": [
+          "Qorako‘l teri (1–3 kunlik qo‘zidan)",
+          "Sut: 40–60 l (sog‘ish davrida)",
+          "Jun: 2–3 kg"
+        ],
+        "features": [
+          "Cho‘l va qurg‘oqchilikka juda chidamli",
+          "Rangi asosan qora, kulrang (shiroziy) va jigarrang"
+        ]
+      },
+      "growth": {
+        "birth": 4,
+        "adult_f": 50,
+        "adult_m": 70,
+        "maturity_d": 545,
+        "adg": [
+          120,
+          200
+        ]
+      },
+      "tip": "Qorako‘l qo‘ylari kam ozuqada ham yashaydi, ammo qishda qo‘shimcha pichan berilsa, sovliqlar mahsuldorligi oshadi.",
+      "photo": {
+        "file": "Karakul_sheep_in_Akron_Zoo.jpg",
+        "author": "",
+        "license": ""
+      }
+    },
+    {
+      "id": "edilbay",
+      "species": "qoy",
+      "name": "Edilbay",
+      "direction": [
+        "go‘sht",
+        "yog‘"
+      ],
+      "palette": {
+        "body": "#7b4a2b",
+        "patch": "#4e2d19",
+        "accent": "#2a1a10",
+        "pattern": "plain",
+        "tail": "fat"
+      },
+      "profile": {
+        "brown": 0.94,
+        "aspect": 1.15
+      },
+      "origin": "Qozog‘iston va Volgabo‘yi; O‘zbekistonda ham ko‘paytirilmoqda.",
+      "summary": "Tez yetiladigan, kuchli dumbali go‘sht-yog‘ zoti.",
+      "general": {
+        "weight_f": "65–75 kg",
+        "weight_m": "110–120 kg",
+        "height": "75–80 sm",
+        "productivity": [
+          "4 oylik qo‘zilar 40–45 kg",
+          "Dumba: 12–15 kg",
+          "So‘yish chiqimi: 55–58 %"
+        ],
+        "features": [
+          "Erta yetiladi",
+          "Issiq va sovuqqa chidamli"
+        ]
+      },
+      "growth": {
+        "birth": 5,
+        "adult_f": 70,
+        "adult_m": 115,
+        "maturity_d": 545,
+        "adg": [
+          250,
+          350
+        ]
+      },
+      "tip": "Edilbay qo‘zilari 4–5 oylikda so‘yishga tayyor bo‘ladi — bu tez aylanma mablag‘ beradi.",
+      "photo": {
+        "file": "Fettschwanzschafe_Usbekistan.JPG",
+        "author": "Man77",
+        "license": "",
+        "caption": "Dumbali qo‘ylar, Chiroqchi bozori (namuna rasm)"
+      }
+    },
+    {
+      "id": "zaanen",
+      "species": "echki",
+      "name": "Zaanen",
+      "direction": [
+        "sut"
+      ],
+      "palette": {
+        "body": "#f6f4ef",
+        "patch": "#e9e4da",
+        "accent": "#d8b49a",
+        "pattern": "plain"
+      },
+      "profile": {
+        "white": 0.91,
+        "grey": 0.05,
+        "aspect": 0.82
+      },
+      "origin": "Shveytsariya (Zaanen vodiysi).",
+      "summary": "Oq rangli, eng sersut echki zoti.",
+      "general": {
+        "weight_f": "50–70 kg",
+        "weight_m": "70–90 kg",
+        "height": "75–85 sm",
+        "productivity": [
+          "Sut: 600–900 l / laktatsiya (10 oy)",
+          "Sut yog‘liligi: 3,5–4,0 %",
+          "Egizak tug‘ish ko‘p uchraydi"
+        ],
+        "features": [
+          "Yaxshi parvarish va oziqlantirish talab qiladi",
+          "Kuchli quyoshda soya kerak (terisi sezgir)"
+        ]
+      },
+      "growth": {
+        "birth": 3.5,
+        "adult_f": 60,
+        "adult_m": 80,
+        "maturity_d": 455,
+        "adg": [
+          120,
+          180
+        ]
+      },
+      "tip": "Zaanen echkisidan ko‘p sut olish uchun konsentratni har 1 litr sutga 250 g hisobida bering.",
+      "photo": {
+        "file": "Saanen_goat_standing.jpg",
+        "author": "ChristianNawroth",
+        "license": ""
+      }
+    },
+    {
+      "id": "mahalliy_echki",
+      "species": "echki",
+      "name": "Mahalliy echki",
+      "direction": [
+        "sut",
+        "jun",
+        "go‘sht"
+      ],
+      "palette": {
+        "body": "#2a2420",
+        "patch": "#7a5236",
+        "accent": "#5a4a3a",
+        "pattern": "spots"
+      },
+      "profile": {
+        "black": 0.71,
+        "grey": 0.04,
+        "brown": 0.23,
+        "aspect": 0.82
+      },
+      "origin": "O‘zbekistonning mahalliy zotlari (jumladan tivitli echkilar).",
+      "summary": "Chidamli, kam talabchan, sut, tivit va go‘sht beradi.",
+      "general": {
+        "weight_f": "30–40 kg",
+        "weight_m": "45–60 kg",
+        "height": "60–65 sm",
+        "productivity": [
+          "Sut: 150–300 l / laktatsiya",
+          "Tivit: 150–300 g",
+          "Go‘sht chiqimi: 45–50 %"
+        ],
+        "features": [
+          "Tog‘ va adir yaylovlariga moslashgan",
+          "Kasalliklarga chidamli"
+        ]
+      },
+      "growth": {
+        "birth": 2.5,
+        "adult_f": 35,
+        "adult_m": 52,
+        "maturity_d": 455,
+        "adg": [
+          80,
+          150
+        ]
+      },
+      "tip": "Mahalliy echkini Zaanen bilan chatishtirish sut mahsuldorligini 1,5–2 baravar oshiradi.",
+      "photo": {
+        "file": "Sheep_and_goats_in_Kyzyl_Kum_(Uzbekistan).jpg",
+        "author": "Dmitriy A. Pitirimov",
+        "license": "",
+        "caption": "Qizilqumdagi qo‘y va echkilar"
+      }
+    },
+    {
+      "id": "qorabayir",
+      "species": "ot",
+      "name": "Qorabayir",
+      "direction": [
+        "minish",
+        "ulov"
+      ],
+      "palette": {
+        "body": "#6b3a1f",
+        "patch": "#1c120c",
+        "accent": "#1c120c",
+        "pattern": "plain"
+      },
+      "profile": {
+        "black": 0.14,
+        "grey": 0.05,
+        "brown": 0.82,
+        "aspect": 0.88
+      },
+      "origin": "O‘zbekiston (Zarafshon vodiysi); qadimiy o‘zbek zoti.",
+      "summary": "Universal (minish va ulov), chidamli o‘zbek ot zoti; ko‘pkari uchun mashhur.",
+      "general": {
+        "weight_f": "400–430 kg",
+        "weight_m": "430–470 kg",
+        "height": "150–155 sm",
+        "productivity": [
+          "Uzoq masofaga chidamli",
+          "Ko‘pkari va sport musobaqalari",
+          "Biyalardan qimiz uchun sut"
+        ],
+        "features": [
+          "Issiqqa chidamli",
+          "Aqlli, tez o‘rgatiladi"
+        ]
+      },
+      "growth": {
+        "birth": 40,
+        "adult_f": 415,
+        "adult_m": 450,
+        "maturity_d": 1460,
+        "adg": [
+          400,
+          700
+        ]
+      },
+      "tip": "Ko‘pkari otlari musobaqadan 1–1,5 oy oldin maxsus tayyorgarlik (yem va mashq) rejimiga o‘tkaziladi.",
+      "photo": {
+        "file": "Steppes_in_Uzbekistan.jpg",
+        "author": "Anastasia Ture",
+        "license": "",
+        "caption": "O‘zbekiston dashtidagi otlar (namuna rasm)"
+      }
+    },
+    {
+      "id": "axaltaka",
+      "species": "ot",
+      "name": "Axaltaka",
+      "direction": [
+        "minish",
+        "sport"
+      ],
+      "palette": {
+        "body": "#c9a35a",
+        "patch": "#7d5a2e",
+        "accent": "#6e4f28",
+        "pattern": "plain"
+      },
+      "profile": {
+        "brown": 0.12,
+        "gold": 0.8,
+        "aspect": 0.9
+      },
+      "origin": "Turkmaniston; dunyodagi eng qadimiy zotlardan biri.",
+      "summary": "Nafis, tezyurar, oltinrang yaltiroq junli ot.",
+      "general": {
+        "weight_f": "400–430 kg",
+        "weight_m": "430–450 kg",
+        "height": "150–160 sm",
+        "productivity": [
+          "Poyga va sport",
+          "Uzoq masofaga bardoshli",
+          "Issiq iqlimga moslashgan"
+        ],
+        "features": [
+          "Sezgir fe’lli, tajribali chavandoz talab qiladi",
+          "Sifatli ozuqa va parvarish kerak"
+        ]
+      },
+      "growth": {
+        "birth": 38,
+        "adult_f": 415,
+        "adult_m": 445,
+        "maturity_d": 1460,
+        "adg": [
+          400,
+          650
+        ]
+      },
+      "tip": "Sport otlarida don miqdori mashg‘ulot yuklamasiga qarab belgilanadi; dam kunlari don kamaytiriladi.",
+      "photo": {
+        "file": "Akhal_teke.jpg",
+        "author": "Annalisa Parisi",
+        "license": ""
+      }
+    },
+    {
+      "id": "kaliforniya",
+      "species": "quyon",
+      "name": "Kaliforniya quyoni",
+      "direction": [
+        "go‘sht",
+        "mo‘yna"
+      ],
+      "palette": {
+        "body": "#f5f3ef",
+        "patch": "#2e2622",
+        "accent": "#e8a0a8",
+        "pattern": "points"
+      },
+      "profile": {
+        "white": 0.79,
+        "black": 0.17,
+        "aspect": 0.8
+      },
+      "origin": "AQSh (Kaliforniya).",
+      "summary": "Oq, quloqlari, burni va panjalari qora; go‘sht uchun eng mashhur zotlardan.",
+      "general": {
+        "weight_f": "4–5 kg",
+        "weight_m": "4–4,5 kg",
+        "height": "45–50 sm (tana uzunligi)",
+        "productivity": [
+          "Bir tug‘ishda 8–10 bola",
+          "3 oyda 2,5–3 kg",
+          "Go‘sht chiqimi: 60 %"
+        ],
+        "features": [
+          "Tinch fe’lli, katakda boqishga qulay",
+          "Issiqda soya va shamollatish kerak"
+        ]
+      },
+      "growth": {
+        "birth": 0.06,
+        "adult_f": 4.6,
+        "adult_m": 4.3,
+        "maturity_d": 150,
+        "adg": [
+          30,
+          40
+        ]
+      },
+      "tip": "Bolalarni 30–35 kunlikda onasidan ajratish urg‘ochini qayta urchitishga tayyorlaydi.",
+      "photo": {
+        "file": "Króliki_kalifornijskie_californian_rabbits.jpg",
+        "author": "Flyz1",
+        "license": "CC0"
+      }
+    },
+    {
+      "id": "yangi_zelandiya",
+      "species": "quyon",
+      "name": "Yangi Zelandiya oq quyoni",
+      "direction": [
+        "go‘sht"
+      ],
+      "palette": {
+        "body": "#fbfaf7",
+        "patch": "#efe9e1",
+        "accent": "#e58f9b",
+        "pattern": "plain"
+      },
+      "profile": {
+        "white": 0.93,
+        "brown": 0.04,
+        "aspect": 0.83
+      },
+      "origin": "AQSh.",
+      "summary": "Butunlay oq, ko‘zlari qizil; tez o‘suvchi go‘sht zoti.",
+      "general": {
+        "weight_f": "4,5–5,5 kg",
+        "weight_m": "4,5–5 kg",
+        "height": "47–50 sm (tana uzunligi)",
+        "productivity": [
+          "Bir tug‘ishda 8–12 bola",
+          "3 oyda 2,8–3,2 kg",
+          "Go‘sht chiqimi: 58–60 %"
+        ],
+        "features": [
+          "Sanoat fermalarida keng tarqalgan",
+          "Yaxshi ona"
+        ]
+      },
+      "growth": {
+        "birth": 0.06,
+        "adult_f": 5,
+        "adult_m": 4.8,
+        "maturity_d": 150,
+        "adg": [
+          35,
+          45
+        ]
+      },
+      "tip": "Granulalangan yemda boqilganda 90 kunda 3 kg dan ortiq vazn oladi.",
+      "photo": {
+        "file": "NewZealandWhiteRabbit.jpg",
+        "author": "Greg Bulla",
+        "license": "CC BY-SA 3.0"
+      }
+    },
+    {
+      "id": "ross308",
+      "species": "tovuq",
+      "name": "Broyler Ross-308",
+      "direction": [
+        "go‘sht"
+      ],
+      "palette": {
+        "body": "#fbfaf6",
+        "patch": "#eeeae2",
+        "accent": "#d9322b",
+        "pattern": "plain"
+      },
+      "profile": {
+        "white": 0.88,
+        "gold": 0.06,
+        "aspect": 0.83
+      },
+      "origin": "Aviagen kompaniyasi (Buyuk Britaniya/AQSh) gibridi.",
+      "summary": "Dunyodagi eng ommabop broyler krossi: 6 haftada 3 kg.",
+      "general": {
+        "weight_f": "42 kunda 2,6–2,8 kg",
+        "weight_m": "42 kunda 2,9–3,1 kg",
+        "height": "25–30 sm",
+        "productivity": [
+          "So‘yish: 35–42 kunlik",
+          "Yem konversiyasi: 1,6–1,7 kg yem / 1 kg vazn",
+          "Saqlanuvchanlik: 95–97 %"
+        ],
+        "features": [
+          "Harorat va shamollatishga juda sezgir",
+          "Faqat omuxta yemda o‘zini oqlaydi"
+        ]
+      },
+      "growth": {
+        "birth": 0.042,
+        "adult_f": 2.7,
+        "adult_m": 3.0,
+        "maturity_d": 42,
+        "curve_frac": 0.5,
+        "adg": [
+          55,
+          75
+        ]
+      },
+      "tip": "Ross-308 ni 42 kundan ortiq boqish iqtisodiy jihatdan foydasiz: yem sarfi oshadi, oyoq muammolari ko‘payadi.",
+      "photo": {
+        "file": "Image_of_8_weeks_old_broiler_chicken.jpg",
+        "author": "AJ.Adekunle",
+        "license": "",
+        "caption": "Broyler tovuq (namuna rasm)"
+      }
+    },
+    {
+      "id": "lomanbraun",
+      "species": "tovuq",
+      "name": "Loman Braun",
+      "direction": [
+        "tuxum"
+      ],
+      "palette": {
+        "body": "#a8582a",
+        "patch": "#7a3c1a",
+        "accent": "#d9322b",
+        "pattern": "plain"
+      },
+      "profile": {
+        "brown": 0.04,
+        "red": 0.83,
+        "gold": 0.08,
+        "aspect": 0.85
+      },
+      "origin": "Lohmann Tierzucht (Germaniya) krossi.",
+      "summary": "Jigarrang tuxum qo‘yadigan, eng mahsuldor tuxumdor krosslardan.",
+      "general": {
+        "weight_f": "1,9–2,1 kg",
+        "weight_m": "2,8–3 kg",
+        "height": "35–40 sm",
+        "productivity": [
+          "Tuxum: yiliga 300–320 dona",
+          "Tuxum vazni: 62–64 g",
+          "Tuxum qo‘yish 19–21 haftalikdan"
+        ],
+        "features": [
+          "Tinch fe’lli, uy sharoitiga mos",
+          "Yorug‘lik rejimi (16 soat) muhim"
+        ]
+      },
+      "growth": {
+        "birth": 0.038,
+        "adult_f": 2.0,
+        "adult_m": 2.9,
+        "maturity_d": 150,
+        "adg": [
+          12,
+          16
+        ]
+      },
+      "tip": "Tuxum qo‘yish davrida kalsiyni alohida idishda (chig‘anoq) berish tuxum po‘chog‘ini mustahkam qiladi.",
+      "photo": {
+        "file": "Lohmann_Brown_adult_hen.jpg",
+        "author": "Konstantin Nikiforov",
+        "license": ""
+      }
+    },
+    {
+      "id": "xonaki_tovuq",
+      "species": "tovuq",
+      "name": "Xonaki tovuq",
+      "direction": [
+        "tuxum",
+        "go‘sht"
+      ],
+      "palette": {
+        "body": "#8c5a2e",
+        "patch": "#2a1d14",
+        "accent": "#d9322b",
+        "pattern": "spots"
+      },
+      "profile": {
+        "black": 0.12,
+        "brown": 0.72,
+        "red": 0.04,
+        "gold": 0.07,
+        "aspect": 0.83
+      },
+      "origin": "Mahalliy, xalq seleksiyasi.",
+      "summary": "Har xil rangli, chidamli, erkin yurib boqiladigan tovuqlar.",
+      "general": {
+        "weight_f": "1,5–2,5 kg",
+        "weight_m": "2,5–3,5 kg",
+        "height": "35–45 sm",
+        "productivity": [
+          "Tuxum: yiliga 120–180 dona",
+          "Tuxum vazni: 50–55 g",
+          "Go‘shti mazali"
+        ],
+        "features": [
+          "Ona tovuqlik instinkti kuchli",
+          "Kasalliklarga chidamli, oddiy ozuqada yashaydi"
+        ]
+      },
+      "growth": {
+        "birth": 0.035,
+        "adult_f": 2.0,
+        "adult_m": 3.0,
+        "maturity_d": 180,
+        "adg": [
+          10,
+          16
+        ]
+      },
+      "tip": "Xonaki tovuqlar ham omuxta yem va yorug‘lik (14–16 soat) bilan ancha ko‘p tuxum beradi.",
+      "photo": {
+        "file": "Rooster_and_Hen.jpg",
+        "author": "SimonWaldherr",
+        "license": ""
+      }
+    },
+    {
+      "id": "big6",
+      "species": "kurka",
+      "name": "Big-6 kurkasi",
+      "direction": [
+        "go‘sht"
+      ],
+      "palette": {
+        "body": "#f7f5f0",
+        "patch": "#e5dfd5",
+        "accent": "#d33a2f",
+        "pattern": "plain"
+      },
+      "profile": {
+        "white": 0.95,
+        "aspect": 0.81
+      },
+      "origin": "Aviagen Turkeys (BUT, Buyuk Britaniya) krossi.",
+      "summary": "Og‘ir kross: erkaklari 20 kg dan oshadi.",
+      "general": {
+        "weight_f": "9–11 kg (16 haftada)",
+        "weight_m": "18–22 kg (20–22 haftada)",
+        "height": "80–100 sm",
+        "productivity": [
+          "Yem konversiyasi: 2,5–2,8",
+          "Ko‘krak go‘shti ulushi yuqori",
+          "Go‘sht chiqimi: 80 % ga yaqin"
+        ],
+        "features": [
+          "Birinchi 4 hafta haroratga juda talabchan",
+          "Katta maydon va mustahkam oyoqlar kerak"
+        ]
+      },
+      "growth": {
+        "birth": 0.055,
+        "adult_f": 10,
+        "adult_m": 20,
+        "maturity_d": 150,
+        "curve_frac": 0.75,
+        "adg": [
+          80,
+          150
+        ]
+      },
+      "tip": "Big-6 erkaklari 18–20 haftalikda eng yaxshi narx-sifat nisbatida so‘yiladi.",
+      "photo": {
+        "file": "White_turkey_(32126275356).jpg",
+        "author": "",
+        "license": "",
+        "caption": "Oq kurka (namuna rasm)"
+      }
+    },
+    {
+      "id": "pekin",
+      "species": "ordak",
+      "name": "Pekin o‘rdagi",
+      "direction": [
+        "go‘sht"
+      ],
+      "palette": {
+        "body": "#fbf8f0",
+        "patch": "#efe8da",
+        "accent": "#f0a020",
+        "pattern": "plain"
+      },
+      "profile": {
+        "white": 0.88,
+        "gold": 0.09,
+        "aspect": 0.8
+      },
+      "origin": "Xitoy; dunyoda eng ko‘p tarqalgan go‘sht o‘rdagi.",
+      "summary": "Oq patli, tez o‘suvchi, 7 haftada 3 kg dan oshadi.",
+      "general": {
+        "weight_f": "3–3,5 kg",
+        "weight_m": "3,5–4 kg",
+        "height": "40–50 sm",
+        "productivity": [
+          "7 haftada 3–3,5 kg",
+          "Tuxum: yiliga 100–150 dona",
+          "Tuxum vazni: 80–90 g"
+        ],
+        "features": [
+          "Sovuqqa chidamli",
+          "Suvni yaxshi ko‘radi, ammo suv havzasisiz ham boqiladi"
+        ]
+      },
+      "growth": {
+        "birth": 0.055,
+        "adult_f": 3.3,
+        "adult_m": 3.7,
+        "maturity_d": 55,
+        "curve_frac": 0.8,
+        "adg": [
+          50,
+          70
+        ]
+      },
+      "tip": "So‘yishni 50–55 kunda qiling: keyin tullash boshlanadi va go‘sht sifati pasayadi.",
+      "photo": {
+        "file": "Pekin_Ducks_cropped.jpg",
+        "author": "Katie Chodil",
+        "license": "CC BY 2.0"
+      }
+    },
+    {
+      "id": "kuban_goz",
+      "species": "goz",
+      "name": "Kuban g‘ozi",
+      "direction": [
+        "go‘sht",
+        "pat"
+      ],
+      "palette": {
+        "body": "#9b9086",
+        "patch": "#f1eee9",
+        "accent": "#e8862a",
+        "pattern": "belly"
+      },
+      "profile": {
+        "white": 0.27,
+        "grey": 0.65,
+        "gold": 0.07,
+        "aspect": 0.7
+      },
+      "origin": "Rossiya (Kuban); MDH mamlakatlarida keng tarqalgan.",
+      "summary": "Kulrang-jigarrang, sertuxum va chidamli g‘oz zoti.",
+      "general": {
+        "weight_f": "5–5,5 kg",
+        "weight_m": "5,5–6,5 kg",
+        "height": "70–80 sm",
+        "productivity": [
+          "Tuxum: yiliga 80–90 dona",
+          "60–70 kunda 4–4,5 kg",
+          "Par va pat"
+        ],
+        "features": [
+          "Yaylovda boqishga juda mos",
+          "Issiq iqlimga yaxshi moslashgan"
+        ]
+      },
+      "growth": {
+        "birth": 0.1,
+        "adult_f": 5.3,
+        "adult_m": 6.2,
+        "maturity_d": 120,
+        "adg": [
+          50,
+          70
+        ]
+      },
+      "tip": "Yaylov mavjud bo‘lsa, g‘ozlarni boqish xarajati boshqa parrandalarga qaraganda ancha arzon.",
+      "photo": {
+        "file": "Greylag_Goose_Grauwe_Gans.JPG",
+        "author": "Look Sharp!",
+        "license": "",
+        "caption": "Kulrang xonaki g‘oz (namuna rasm)"
+      }
+    },
+    {
+      "id": "yapon_bedana",
+      "species": "bedana",
+      "name": "Yapon bedanasi",
+      "direction": [
+        "tuxum"
+      ],
+      "palette": {
+        "body": "#8c6a48",
+        "patch": "#3c2c1e",
+        "accent": "#5a4632",
+        "pattern": "speckle"
+      },
+      "profile": {
+        "grey": 0.05,
+        "brown": 0.86,
+        "gold": 0.08,
+        "aspect": 1.12
+      },
+      "origin": "Yaponiya; bedana tuxumi uchun asosiy zot.",
+      "summary": "Kichik, ammo juda sertuxum: yiliga 280–300 tuxum.",
+      "general": {
+        "weight_f": "130–150 g",
+        "weight_m": "110–130 g",
+        "height": "16–18 sm (tana uzunligi)",
+        "productivity": [
+          "Tuxum: yiliga 280–300 dona",
+          "Tuxum vazni: 10–12 g",
+          "35–45 kunlikdan tuxum qo‘yadi"
+        ],
+        "features": [
+          "Kichik joyda ko‘p bosh saqlash mumkin",
+          "Go‘sht uchun Faraon zoti (250–300 g) afzal"
+        ]
+      },
+      "growth": {
+        "birth": 0.008,
+        "adult_f": 0.14,
+        "adult_m": 0.12,
+        "maturity_d": 45,
+        "adg": [
+          3,
+          5
+        ]
+      },
+      "tip": "1 m² katakda 50–60 tagacha bedana saqlash mumkin — kichik xo‘jalik uchun qulay.",
+      "photo": {
+        "file": "3_Japanese_quails_less_than_1_year_old.JPG",
+        "author": "BrokenSphere",
+        "license": ""
+      }
+    }
+  ]
+}

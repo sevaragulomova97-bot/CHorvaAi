@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="uz" data-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0f6b3a">
+  <meta name="description" content="Chorva AI — uy hayvonlari va parrandalarni sun’iy intellekt yordamida tahlil qilish va boshqarish ilovasi.">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Chorva AI">
+  <title>Chorva AI — aqlli chorvachilik yordamchisi</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" type="image/png" sizes="192x192" href="/static/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="/static/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="/static/css/style.css?v={{ version }}">
+  <script src="/static/js/config.js?v={{ version }}"></script>
+  <script src="/static/js/theme.js?v={{ version }}"></script>
+</head>
+<body>
+  <!-- Yuqori panel -->
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#/" aria-label="Bosh sahifa">
+      <img src="/static/icons/icon-192.png" alt="" width="30" height="30">
+      <span>Chorva <b>AI</b></span>
+    </a>
+    <div class="topbar-actions">
+      <a class="top-btn" href="#/mening" id="topMy" aria-label="Mening hayvonlarim">
+        <span aria-hidden="true">📋</span><span class="top-btn-label">Mening hayvonlarim</span>
+      </a>
+      <a class="top-btn icon-only" href="#/sozlamalar" aria-label="Sozlamalar"><span aria-hidden="true">⚙️</span></a>
+    </div>
+  </header>
+
+  <main id="app">
+    <!-- A. Bosh oyna: AI kamera skaneri -->
+    <section class="screen screen-scan" id="screen-home" data-screen="home">
+      <div class="camera-stage" id="cameraStage">
+        <video id="camVideo" playsinline muted autoplay></video>
+        <img id="camFrozen" alt="Tanlangan rasm" hidden>
+        <canvas id="camCanvas" hidden></canvas>
+
+        <div class="cam-mode" role="radiogroup" aria-label="Skanerlash turi">
+          <button type="button" class="mode-chip active" data-mode="auto" role="radio" aria-checked="true">🤖 Avto</button>
+          <button type="button" class="mode-chip" data-mode="uy" role="radio" aria-checked="false">🐄 Uy hayvoni</button>
+          <button type="button" class="mode-chip" data-mode="parranda" role="radio" aria-checked="false">🐔 Parranda</button>
+        </div>
+
+        <div class="viewfinder" id="viewfinder" aria-hidden="true">
+          <span class="vf-corner tl"></span><span class="vf-corner tr"></span>
+          <span class="vf-corner bl"></span><span class="vf-corner br"></span>
+          <span class="vf-cross"></span>
+          <span class="vf-scanline"></span>
+          <span class="vf-label" id="vfLabel">Hayvonni ramka ichiga joylashtiring</span>
+        </div>
+
+        <div class="cam-tools">
+          <button type="button" class="tool-btn" id="btnGallery" aria-label="Galereyadan rasm yuklash">🖼️<small>Galereya</small></button>
+          <button type="button" class="tool-btn" id="btnDemo" aria-label="Demo rasm bilan sinash">✨<small>Demo</small></button>
+          <button type="button" class="tool-btn" id="btnTorch" aria-label="Chiroq" hidden>🔦<small>Chiroq</small></button>
+          <button type="button" class="tool-btn" id="btnLive" aria-label="Jonli kameraga qaytish" hidden>🎥<small>Kamera</small></button>
+        </div>
+
+        <div class="cam-fallback" id="camFallback" hidden>
+          <div class="cam-fallback-card">
+            <div class="cam-fallback-icon">📷</div>
+            <h2>Kamera ochilmadi</h2>
+            <p id="camFallbackText">Kameraga ruxsat bering yoki rasmni galereyadan yuklang.</p>
+            <div class="cam-fallback-actions">
+              <button type="button" class="btn btn-primary" id="btnFallbackGallery">🖼️ Galereyadan yuklash</button>
+              <button type="button" class="btn btn-light" id="btnFallbackDemo">✨ Demo rejimda sinash</button>
+              <button type="button" class="btn btn-ghost-light" id="btnRetryCam">🔄 Kamerani qayta ochish</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="scan-overlay" id="scanOverlay" hidden>
+          <div class="scan-spinner"></div>
+          <p>AI tahlil qilmoqda…</p>
+        </div>
+        <input type="file" id="galleryInput" accept="image/*" hidden>
+      </div>
+
+      <nav class="scan-dock" aria-label="Asosiy amallar">
+        <a class="dock-btn" href="#/katalog/uy">
+          <span class="dock-icon">🐄</span><span>Uy hayvonlari</span>
+        </a>
+        <button type="button" class="dock-scan" id="btnScan" aria-label="Skanerlash">
+          <span class="dock-scan-ring"></span>
+          <span class="dock-scan-inner">AI</span>
+          <span class="dock-scan-label">Skanerlash</span>
+        </button>
+        <a class="dock-btn" href="#/katalog/parranda">
+          <span class="dock-icon">🐔</span><span>Parrandalar</span>
+        </a>
+      </nav>
+    </section>
+
+    <!-- B. Katalog -->
+    <section class="screen screen-page" id="screen-catalog" data-screen="catalog" hidden>
+      <div class="page">
+        <div class="seg" role="tablist" aria-label="Katalog bo‘limi">
+          <a class="seg-btn" href="#/katalog/uy" data-group="uy" role="tab">🐄 Uy hayvonlari</a>
+          <a class="seg-btn" href="#/katalog/parranda" data-group="parranda" role="tab">🐔 Parrandalar</a>
+        </div>
+        <label class="search">
+          <span aria-hidden="true">🔎</span>
+          <input type="search" id="catalogSearch" placeholder="Zot yoki tur nomini yozing…" autocomplete="off">
+        </label>
+        <div class="chips" id="speciesChips"></div>
+        <div class="cards" id="catalogGrid"></div>
+        <p class="empty" id="catalogEmpty" hidden>Hech narsa topilmadi.</p>
+      </div>
+    </section>
+
+    <!-- C. Mening hayvonlarim -->
+    <section class="screen screen-page" id="screen-farm" data-screen="farm" hidden>
+      <div class="page" id="farmPage"></div>
+    </section>
+
+    <!-- C2. Bitta hayvon sahifasi -->
+    <section class="screen screen-page" id="screen-animal" data-screen="animal" hidden>
+      <div class="page" id="animalPage"></div>
+    </section>
+
+    <!-- Sozlamalar -->
+    <section class="screen screen-page" id="screen-settings" data-screen="settings" hidden>
+      <div class="page" id="settingsPage"></div>
+    </section>
+  </main>
+
+  <!-- Pastki navigatsiya (skaner ekranidan tashqari) -->
+  <nav class="bottom-nav" id="bottomNav" aria-label="Navigatsiya" hidden>
+    <a href="#/" data-nav="home"><span>📷</span>Skaner</a>
+    <a href="#/katalog/uy" data-nav="catalog"><span>📚</span>Katalog</a>
+    <a href="#/mening" data-nav="farm"><span>📋</span>Hayvonlarim</a>
+    <a href="#/sozlamalar" data-nav="settings"><span>⚙️</span>Sozlamalar</a>
+  </nav>
+
+  <!-- Pastdan chiquvchi oyna (Bottom Sheet) -->
+  <div class="sheet-backdrop" id="sheetBackdrop" hidden></div>
+  <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" hidden>
+    <div class="sheet-handle" id="sheetHandle"><span></span></div>
+    <button type="button" class="sheet-close" id="sheetClose" aria-label="Yopish">✕</button>
+    <div class="sheet-body" id="sheetBody"></div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <noscript><p class="noscript">Ilova ishlashi uchun brauzerda JavaScript yoqilgan bo‘lishi kerak.</p></noscript>
+
+  <script src="/static/vendor/chart.umd.min.js?v={{ version }}"></script>
+  <script src="/static/js/util.js?v={{ version }}"></script>
+  <script src="/static/js/db.js?v={{ version }}"></script>
+  <script src="/static/js/growth.js?v={{ version }}"></script>
+  <script src="/static/js/illus.js?v={{ version }}"></script>
+  <script src="/static/js/sheet.js?v={{ version }}"></script>
+  <script src="/static/js/camera.js?v={{ version }}"></script>
+  <script src="/static/js/catalog.js?v={{ version }}"></script>
+  <script src="/static/js/farm.js?v={{ version }}"></script>
+  <script src="/static/js/settings.js?v={{ version }}"></script>
+  <script src="/static/js/app.js?v={{ version }}"></script>
+</body>
+</html>

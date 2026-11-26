@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+# Virtual muhit va maxfiy kalitlar
+.venv/
+venv/
+env/
+.env
+# Capacitor / Node / Android
+node_modules/
+www/
+android/
+ios/
+*.apk
+*.aab
+*.keystore
+# Vercel
+.vercel/
+# Tizim va muharrir fayllari
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

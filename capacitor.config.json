@@ -1,0 +1,11 @@
+{
+  "appId": "uz.chorva.ai",
+  "appName": "Chorva AI",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "allowMixedContent": false
+  }
+}
