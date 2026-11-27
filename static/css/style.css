@@ -130,7 +130,7 @@ body.on-scan { background: #000; overflow: hidden; }
 .cam-fallback-card p { color: #c9dccf; margin: 0 0 1rem; font-size: .93rem; }
 .cam-fallback-actions { display: grid; gap: .55rem; }
 
-.scan-overlay { position: absolute; inset: 0; z-index: 7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .8rem; color: #fff; background: rgba(0,0,0,.35); font-weight: 700; }
+.scan-overlay { position: absolute; inset: 0; z-index: 7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .8rem; color: #fff; background: rgba(0,0,0,.35); font-weight: 700; text-align: center; padding: 0 1.5rem; }
 .scan-spinner { width: 54px; height: 54px; border-radius: 50%; border: 5px solid rgba(255,255,255,.25); border-top-color: #57f59a; animation: spin .8s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 

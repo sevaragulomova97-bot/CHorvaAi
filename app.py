@@ -34,7 +34,7 @@ from werkzeug.middleware.proxy_fix import ProxyFix
 # ----------------------------------------------------------------------------
 # Sozlamalar (hammasi muhit o‘zgaruvchilari orqali o‘zgartiriladi)
 # ----------------------------------------------------------------------------
-APP_VERSION = "1.4.1"
+APP_VERSION = "1.4.2"
 BASE_DIR = Path(__file__).resolve().parent
 
 

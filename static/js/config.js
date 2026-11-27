@@ -4,5 +4,5 @@
    Render manzilingizga almashtiradi, masalan: "https://chorva-ai.onrender.com" */
 window.CHORVA_CONFIG = {
   apiBase: "",
-  version: "1.4.1"
+  version: "1.4.2"
 };

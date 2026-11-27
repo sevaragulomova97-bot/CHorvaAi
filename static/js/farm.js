@@ -415,7 +415,7 @@
       if (scale != null) return showAnalysis(a, recs, Object.assign(base, { weight: scale, source: "tarozi" }), null);
       if (g != null && l != null) return showAnalysis(a, recs, Object.assign(base, { weight: CH.growth.formulaWeight(s, g, l), source: "olcham" }), null);
       if (photo) {
-        btn.disabled = true; btn.textContent = "⏳ AI tahlil qilmoqda…";
+        btn.disabled = true; btn.textContent = "⏳ AI tahlil qilmoqda… (15–30 soniya)";
         var fd = new FormData();
         fd.append("image", photo.blob, "oylik.jpg");
         fd.append("species", a.species); fd.append("breed", a.breed); fd.append("sex", a.sex || "");

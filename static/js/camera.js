@@ -165,11 +165,19 @@
     return Promise.resolve(c);
   }
 
+  var busyTimers = [];
   function setBusy(on) {
     st.busy = on;
     el.btnScan.disabled = on;
     el.scanOverlay.hidden = !on;
     el.viewfinder.classList.toggle("busy", on);
+    busyTimers.forEach(clearTimeout); busyTimers = [];
+    var msg = el.scanOverlay.querySelector("p");
+    msg.textContent = "AI tahlil qilmoqda…";
+    if (on) {
+      busyTimers.push(setTimeout(function () { msg.textContent = "Rasm tahlil qilinmoqda… odatda 15–30 soniya"; }, 6000));
+      busyTimers.push(setTimeout(function () { msg.textContent = "Server uyg‘onmoqda yoki AI band — biroz kuting…"; }, 30000));
+    }
   }
 
   function scan() {
