@@ -132,7 +132,8 @@
     var html = '<div class="breed-hero">' + CH.breedArt(b, 960) +
       '<h2 id="sheetTitle">' + CH.esc(b.name) + "</h2>" +
       '<div class="muted small">' + sp.emoji + " " + CH.esc(sp.name) + " · " + CH.esc(CH.data.groups[sp.group].name) + "</div>" +
-      CH.dirTags(b.direction) + (CH.photosOn() ? CH.photoCredit(b) : "") + "</div>" +
+      CH.dirTags(b.direction) + (b.photo && b.photo.caption && b.photo.local ? '<span class="credit">📷 ' + CH.esc(b.photo.caption) + "</span>" : "") +
+      (CH.photosOn() ? CH.photoCredit(b) : "") + "</div>" +
       '<div class="tabs" role="tablist">' + TABS.map(function (t) {
         return '<button type="button" class="tab" role="tab" data-tab="' + t.id + '"><span>' + t.icon + "</span>" + t.name + "</button>";
       }).join("") + "</div>" +

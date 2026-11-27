@@ -233,7 +233,9 @@
     try { return localStorage.getItem("chorva-photos") !== "off"; } catch (e) { return true; }
   };
   CH.photoUrl = function (breed, width) {
-    if (!breed || !breed.photo || !breed.photo.file) return "";
+    if (!breed || !breed.photo) return "";
+    if (breed.photo.local) return breed.photo.local;  // ilova ichidagi rasm (oflayn ham ishlaydi)
+    if (!breed.photo.file) return "";
     return "https://commons.wikimedia.org/wiki/Special:FilePath/" +
       encodeURIComponent(breed.photo.file.replace(/ /g, "_")) + "?width=" + (width || 500);
   };
@@ -241,7 +243,7 @@
     return "https://commons.wikimedia.org/wiki/File:" + encodeURIComponent(breed.photo.file.replace(/ /g, "_"));
   };
   CH.photoCredit = function (breed) {
-    if (!breed || !breed.photo) return "";
+    if (!breed || !breed.photo || !breed.photo.file) return "";
     var p = breed.photo;
     return '<a class="credit" href="' + CH.photoPage(breed) + '" target="_blank" rel="noopener">📷 ' +
       (p.caption ? CH.esc(p.caption) + " · " : "") + (p.author ? CH.esc(p.author) + " · " : "") +
@@ -251,7 +253,8 @@
   CH.breedArt = function (breedOrId, width) {
     var breed = typeof breedOrId === "string" ? CH.breedById[breedOrId] : breedOrId;
     if (!breed) return "";
-    var img = CH.photosOn() && breed.photo
+    var p = breed.photo;
+    var img = p && (p.local || (p.file && CH.photosOn()))
       ? '<img class="photo" src="' + CH.photoUrl(breed, width) + '" alt="' + CH.esc(breed.name) +
         '" loading="lazy" decoding="async" referrerpolicy="no-referrer">'
       : "";

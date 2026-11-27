@@ -1062,9 +1062,7 @@
       },
       "tip": "Golshtin buqachalarini bo‘rdoqiga boqish mumkin, ammo go‘sht chiqimi go‘sht zotlariga qaraganda kamroq (50–55 %).",
       "photo": {
-        "file": "Holstein_cow.jpg",
-        "author": "Hokkaido-man",
-        "license": ""
+        "local": "/static/img/breeds/golshtin.jpg"
       }
     },
     {
@@ -1115,9 +1113,7 @@
       },
       "tip": "Shvits buqachalari bo‘rdoqida kuniga 900–1100 g o‘sish beradi.",
       "photo": {
-        "file": "Brown_Swiss_cow_at_Western_Idaho_Fair_2009.jpg",
-        "author": "Kenneth Freeman",
-        "license": ""
+        "local": "/static/img/breeds/shvits.jpg"
       }
     },
     {
@@ -1169,9 +1165,7 @@
       },
       "tip": "Simmental buqachalari intensiv bo‘rdoqida kuniga 1100–1300 g gacha o‘sishi mumkin.",
       "photo": {
-        "file": "Simmental-vache.JPG",
-        "author": "Grimlock",
-        "license": "CC BY-SA 2.5"
+        "local": "/static/img/breeds/simmental.jpg"
       }
     },
     {
@@ -1221,10 +1215,7 @@
       },
       "tip": "Mahalliy buqachalarni sut zotli buqalar bilan chatishtirish mahsuldorlikni oshiradi.",
       "photo": {
-        "file": "Крава_,_Cattle_-Cow.JPG",
-        "author": "Jakupica",
-        "license": "",
-        "caption": "Mahalliy tipdagi sigir (namuna rasm)"
+        "local": "/static/img/breeds/mahalliy_qoramol.jpg"
       }
     },
     {
@@ -1276,9 +1267,7 @@
       },
       "tip": "Hisori qo‘zilari bo‘rdoqida kuniga 250–350 g gacha vazn qo‘shadi.",
       "photo": {
-        "file": "Hissarschaf.jpg",
-        "author": "",
-        "license": ""
+        "local": "/static/img/breeds/hisori.jpg"
       }
     },
     {
@@ -1329,9 +1318,7 @@
       },
       "tip": "Qorako‘l qo‘ylari kam ozuqada ham yashaydi, ammo qishda qo‘shimcha pichan berilsa, sovliqlar mahsuldorligi oshadi.",
       "photo": {
-        "file": "Karakul_sheep_in_Akron_Zoo.jpg",
-        "author": "",
-        "license": ""
+        "local": "/static/img/breeds/qorakol.jpg"
       }
     },
     {
@@ -1381,10 +1368,8 @@
       },
       "tip": "Edilbay qo‘zilari 4–5 oylikda so‘yishga tayyor bo‘ladi — bu tez aylanma mablag‘ beradi.",
       "photo": {
-        "file": "Fettschwanzschafe_Usbekistan.JPG",
-        "author": "Man77",
-        "license": "",
-        "caption": "Dumbali qo‘ylar, Chiroqchi bozori (namuna rasm)"
+        "local": "/static/img/breeds/edilbay.jpg",
+        "caption": "Qizil-qo‘ng‘ir yog‘li dumbali qo‘ylar"
       }
     },
     {
@@ -1433,9 +1418,7 @@
       },
       "tip": "Zaanen echkisidan ko‘p sut olish uchun konsentratni har 1 litr sutga 250 g hisobida bering.",
       "photo": {
-        "file": "Saanen_goat_standing.jpg",
-        "author": "ChristianNawroth",
-        "license": ""
+        "local": "/static/img/breeds/zaanen.jpg"
       }
     },
     {
@@ -1487,10 +1470,7 @@
       },
       "tip": "Mahalliy echkini Zaanen bilan chatishtirish sut mahsuldorligini 1,5–2 baravar oshiradi.",
       "photo": {
-        "file": "Sheep_and_goats_in_Kyzyl_Kum_(Uzbekistan).jpg",
-        "author": "Dmitriy A. Pitirimov",
-        "license": "",
-        "caption": "Qizilqumdagi qo‘y va echkilar"
+        "local": "/static/img/breeds/mahalliy_echki.jpg"
       }
     },
     {
@@ -1541,10 +1521,7 @@
       },
       "tip": "Ko‘pkari otlari musobaqadan 1–1,5 oy oldin maxsus tayyorgarlik (yem va mashq) rejimiga o‘tkaziladi.",
       "photo": {
-        "file": "Steppes_in_Uzbekistan.jpg",
-        "author": "Anastasia Ture",
-        "license": "",
-        "caption": "O‘zbekiston dashtidagi otlar (namuna rasm)"
+        "local": "/static/img/breeds/qorabayir.jpg"
       }
     },
     {
@@ -1594,9 +1571,7 @@
       },
       "tip": "Sport otlarida don miqdori mashg‘ulot yuklamasiga qarab belgilanadi; dam kunlari don kamaytiriladi.",
       "photo": {
-        "file": "Akhal_teke.jpg",
-        "author": "Annalisa Parisi",
-        "license": ""
+        "local": "/static/img/breeds/axaltaka.jpg"
       }
     },
     {
@@ -1646,9 +1621,7 @@
       },
       "tip": "Bolalarni 30–35 kunlikda onasidan ajratish urg‘ochini qayta urchitishga tayyorlaydi.",
       "photo": {
-        "file": "Króliki_kalifornijskie_californian_rabbits.jpg",
-        "author": "Flyz1",
-        "license": "CC0"
+        "local": "/static/img/breeds/kaliforniya.jpg"
       }
     },
     {
@@ -1697,9 +1670,7 @@
       },
       "tip": "Granulalangan yemda boqilganda 90 kunda 3 kg dan ortiq vazn oladi.",
       "photo": {
-        "file": "NewZealandWhiteRabbit.jpg",
-        "author": "Greg Bulla",
-        "license": "CC BY-SA 3.0"
+        "local": "/static/img/breeds/yangi_zelandiya.jpg"
       }
     },
     {

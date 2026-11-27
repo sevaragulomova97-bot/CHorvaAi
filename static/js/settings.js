@@ -31,7 +31,7 @@
         [["auto", "Avtomatik"], ["light", "Yorug‘"], ["dark", "Qorong‘i"]].map(function (o) {
           return '<option value="' + o[0] + '"' + (o[0] === theme ? " selected" : "") + ">" + o[1] + "</option>";
         }).join("") + "</select></div>" +
-        '<div class="set-row"><span class="grow">🖼 Real fotosuratlar<small>Katalogda Wikimedia Commons rasmlari (internet kerak)</small></span><select id="setPhotos">' +
+        '<div class="set-row"><span class="grow">🖼 Real fotosuratlar<small>Parrandalar uchun Wikimedia Commons rasmlari (internet kerak). Uy hayvonlari rasmlari ilova ichida.</small></span><select id="setPhotos">' +
         '<option value="on"' + (CH.photosOn() ? " selected" : "") + '>Yoqilgan</option><option value="off"' + (!CH.photosOn() ? " selected" : "") + ">O‘chirilgan</option></select></div></div>" +
 
         '<div class="set-group"><h2>AI tahlil</h2><div class="set-row"><span class="grow" id="aiStatus"><span class="status-dot"></span>Tekshirilmoqda…</span></div></div>' +
@@ -48,7 +48,7 @@
         '<div class="set-group"><h2>Ilova haqida</h2><div class="set-row"><span class="grow">Chorva AI v' + CH.esc((window.CHORVA_CONFIG || {}).version || "") +
         "<small>" + CH.esc(CH.data.note) + "</small></span></div>" +
         '<details class="set-row" style="display:block"><summary>📷 Fotosurat mualliflari</summary><div style="display:grid;gap:.2rem;margin-top:.5rem">' +
-        CH.data.breeds.map(function (b) { return "<div><b>" + CH.esc(b.name) + ":</b> " + CH.photoCredit(b) + "</div>"; }).join("") +
+        CH.data.breeds.filter(function (b) { return b.photo && b.photo.file; }).map(function (b) { return "<div><b>" + CH.esc(b.name) + ":</b> " + CH.photoCredit(b) + "</div>"; }).join("") +
         "</div></details></div>";
 
       CH.$("#setProfile", page).addEventListener("submit", function (e) {

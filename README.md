@@ -163,8 +163,9 @@ Natijani saqlashdan oldin qo‘lda tuzatish mumkin.
 
 ## 🖼 Rasmlar va litsenziyalar
 
-- Katalogdagi fotosuratlar **Wikimedia Commons**’dan (erkin litsenziyalar: CC BY, CC BY-SA, CC0, public domain) havola orqali yuklanadi. Har bir rasm ostida muallif va manba ko‘rsatilgan (to‘liq ro‘yxat: Sozlamalar → Fotosurat mualliflari). Internet bo‘lmasa yoki rasm ochilmasa, uning o‘rnida ilovaning o‘z SVG illyustratsiyasi ko‘rinadi.
-- Ba’zi zotlar uchun aynan o‘sha zotning erkin rasmi topilmagani sababli o‘xshash “namuna rasm” qo‘yilgan (rasm izohida yozilgan). O‘zingizning fotosuratlaringizni qo‘yish uchun `static/data/data.json` faylidagi `photo.file` maydoniga Wikimedia fayl nomini yozing.
+- **Uy hayvonlari** (13 zot) fotosuratlari ilova ichida saqlanadi: `static/img/breeds/<zot_id>.jpg` — internetsiz va APK’da ham ko‘rinadi. Rasmni almashtirish uchun shu papkadagi faylni xuddi shu nom bilan almashtiring.
+- **Parrandalar** fotosuratlari **Wikimedia Commons**’dan (erkin litsenziyalar) havola orqali yuklanadi; muallif va manba rasm ostida va Sozlamalar → Fotosurat mualliflari bo‘limida ko‘rsatilgan.
+- Rasm ochilmasa, uning o‘rnida ilovaning o‘z SVG illyustratsiyasi ko‘rinadi.
 - Chart.js — MIT litsenziyasi (`static/vendor/chart.js-LICENSE.md`).
 
 ## ⚠️ Muhim eslatmalar
