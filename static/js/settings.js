@@ -31,7 +31,7 @@
         [["auto", "Avtomatik"], ["light", "Yorug‘"], ["dark", "Qorong‘i"]].map(function (o) {
           return '<option value="' + o[0] + '"' + (o[0] === theme ? " selected" : "") + ">" + o[1] + "</option>";
         }).join("") + "</select></div>" +
-        '<div class="set-row"><span class="grow">🖼 Real fotosuratlar<small>Parrandalar uchun Wikimedia Commons rasmlari (internet kerak). Uy hayvonlari rasmlari ilova ichida.</small></span><select id="setPhotos">' +
+        '<div class="set-row"><span class="grow">🖼 Real fotosuratlar<small>Ross-308, xonaki tovuq va Kuban g‘ozi uchun Wikimedia rasmlari (internet kerak). Qolganlari ilova ichida.</small></span><select id="setPhotos">' +
         '<option value="on"' + (CH.photosOn() ? " selected" : "") + '>Yoqilgan</option><option value="off"' + (!CH.photosOn() ? " selected" : "") + ">O‘chirilgan</option></select></div></div>" +
 
         '<div class="set-group"><h2>AI tahlil</h2><div class="set-row"><span class="grow" id="aiStatus"><span class="status-dot"></span>Tekshirilmoqda…</span></div></div>' +

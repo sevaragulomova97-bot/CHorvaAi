@@ -49,7 +49,7 @@ class ApiTest(unittest.TestCase):
 
     def test_data_integrity(self):
         data = self.client.get("/api/data").get_json()
-        self.assertEqual(len(data["breeds"]), 20)
+        self.assertEqual(len(data["breeds"]), 23)
         for breed in data["breeds"]:
             self.assertIn(breed["species"], data["species"])
             self.assertIn("photo", breed)

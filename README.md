@@ -7,7 +7,7 @@ O‘zbekiston sharoitida **uy hayvonlari va parrandalarni** boshqarish hamda **s
 | Bo‘lim | Nima qiladi |
 |---|---|
 | 📷 **AI kamera skaneri** (bosh oyna) | Orqa kamera darhol ochiladi, AR ramka. “Skanerlash” → hayvon turi, zoti, taxminiy tirik vazni (kg), bo‘yi (sm), tana holati (BCS 1–5) va tezkor tavsiyalar. Galereyadan yuklash va demo rejim ham bor |
-| 📚 **Katalog** | 10 tur, 20 zot (Golshtin, Shvits, Simmental, Mahalliy, Hisori, Qorako‘l, Edilbay, Zaanen, Qorabayir, Axaltaka, Kaliforniya, Yangi Zelandiya, Ross-308, Loman Braun, Xonaki tovuq, Big-6, Pekin o‘rdagi, Kuban g‘ozi, Yapon bedanasi…). Har birida 4 bo‘lim: **Umumiy · Ratsion · Semirtirish · Emlash** |
+| 📚 **Katalog** | 10 tur, 23 zot (Golshtin, Shvits, Simmental, Mahalliy, Hisori, Qorako‘l, Edilbay, Zaanen, Qorabayir, Axaltaka, Kaliforniya, Yangi Zelandiya, Ross-308, Loman Braun, Leggorn, Brahma, Xonaki tovuq, Big-6, Pekin o‘rdagi, Kuban g‘ozi, Xitoy g‘ozi, Yapon bedanasi…). Har birida 4 bo‘lim: **Umumiy · Ratsion · Semirtirish · Emlash** |
 | 📋 **Mening hayvonlarim** | Birinchi kirishda ro‘yxatdan o‘tish. Hayvon qo‘shish (laqab, tur, zot, jins, tug‘ilgan sana, vazn, rasm, bosh soni). **Oylik rasm yuklash va tahlil**: yangi vazn, oldingi oylar bilan solishtirish, o‘sish grafigi, kunlik o‘sish va ozuqa statistikasi, yoshiga mos emlash kalendari |
 | ⚙️ **Sozlamalar** | Profil, qorong‘i rejim, AI holati, zaxira nusxa (eksport/import), ilovani o‘rnatish |
 
@@ -163,8 +163,8 @@ Natijani saqlashdan oldin qo‘lda tuzatish mumkin.
 
 ## 🖼 Rasmlar va litsenziyalar
 
-- **Uy hayvonlari** (13 zot) fotosuratlari ilova ichida saqlanadi: `static/img/breeds/<zot_id>.jpg` — internetsiz va APK’da ham ko‘rinadi. Rasmni almashtirish uchun shu papkadagi faylni xuddi shu nom bilan almashtiring.
-- **Parrandalar** fotosuratlari **Wikimedia Commons**’dan (erkin litsenziyalar) havola orqali yuklanadi; muallif va manba rasm ostida va Sozlamalar → Fotosurat mualliflari bo‘limida ko‘rsatilgan.
+- **20 zotning** fotosuratlari ilova ichida saqlanadi: `static/img/breeds/<zot_id>.jpg` — internetsiz va APK’da ham ko‘rinadi. Rasmni almashtirish uchun shu papkadagi faylni xuddi shu nom bilan almashtiring.
+- Qolgan 3 zot (Ross-308, Xonaki tovuq, Kuban g‘ozi) fotosuratlari **Wikimedia Commons**’dan (erkin litsenziyalar) havola orqali yuklanadi; muallif va manba rasm ostida va Sozlamalar → Fotosurat mualliflari bo‘limida ko‘rsatilgan.
 - Rasm ochilmasa, uning o‘rnida ilovaning o‘z SVG illyustratsiyasi ko‘rinadi.
 - Chart.js — MIT litsenziyasi (`static/vendor/chart.js-LICENSE.md`).
 

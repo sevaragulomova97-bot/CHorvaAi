@@ -1773,9 +1773,8 @@
       },
       "tip": "Tuxum qo‘yish davrida kalsiyni alohida idishda (chig‘anoq) berish tuxum po‘chog‘ini mustahkam qiladi.",
       "photo": {
-        "file": "Lohmann_Brown_adult_hen.jpg",
-        "author": "Konstantin Nikiforov",
-        "license": ""
+        "local": "/static/img/breeds/lomanbraun.jpg",
+        "caption": "Qo‘ng‘ir tuxumdor tovuq (tijoriy xoch)"
       }
     },
     {
@@ -1833,6 +1832,109 @@
       }
     },
     {
+      "id": "leggorn",
+      "species": "tovuq",
+      "name": "Leggorn (oq tuxumdor)",
+      "direction": [
+        "tuxum"
+      ],
+      "palette": {
+        "body": "#fbfaf6",
+        "patch": "#ece7de",
+        "accent": "#d9322b",
+        "pattern": "plain"
+      },
+      "profile": {
+        "white": 0.88,
+        "gold": 0.06,
+        "aspect": 0.83
+      },
+      "origin": "Italiya (Leggorn zoti) va undan olingan zamonaviy tijoriy xochlar.",
+      "summary": "Oq po‘stli tuxum beradigan yengil, serharakat tuxumdor tovuq.",
+      "general": {
+        "weight_f": "1,8–2,2 kg",
+        "weight_m": "2,5–3 kg",
+        "height": "35–40 sm",
+        "productivity": [
+          "Tuxum: yiliga 250–320 dona (oq po‘stli)",
+          "Tuxum berish 17–20 haftalikdan boshlanadi",
+          "Yem: kuniga 100–120 g; go‘shti kam",
+          "Inkubatsiya: 21 kun"
+        ],
+        "features": [
+          "Issiq iqlimga yaxshi moslashadi; katta toji sovuqda muzlashi mumkin",
+          "Serharakat, tez cho‘chiydi — baland to‘siq kerak (uchib chiqadi)"
+        ]
+      },
+      "growth": {
+        "birth": 0.035,
+        "adult_f": 2.0,
+        "adult_m": 2.7,
+        "maturity_d": 140,
+        "adg": [
+          10,
+          15
+        ]
+      },
+      "tip": "Kuniga 14–16 soat yorug‘lik va tinch, qorong‘i uya tuxum berishni barqaror ushlab turadi.",
+      "photo": {
+        "local": "/static/img/breeds/leggorn.jpg",
+        "caption": "Oq tuxumdor tovuq (Leggorn tipi)"
+      }
+    },
+    {
+      "id": "brahma",
+      "species": "tovuq",
+      "name": "Brahma (og‘ir tovuq)",
+      "direction": [
+        "go‘sht",
+        "tuxum"
+      ],
+      "palette": {
+        "body": "#d8b386",
+        "patch": "#2a2420",
+        "accent": "#d9322b",
+        "pattern": "plain"
+      },
+      "profile": {
+        "gold": 0.89,
+        "aspect": 0.85
+      },
+      "origin": "Osiyo ildizli, AQShda shakllangan yirik zot.",
+      "summary": "Sovuqqa chidamli, oyoqlari patli yirik go‘sht-tuxum tovug‘i.",
+      "general": {
+        "weight_f": "3,5–4,5 kg",
+        "weight_m": "4,5–5,5 kg",
+        "height": "50–70 sm",
+        "productivity": [
+          "Tuxum: yiliga 100–150 dona, ko‘pincha qishda ham beradi",
+          "Sekin o‘sadi: to‘liq vazn 6–8 oyda",
+          "Yirik tana, go‘shti mazali",
+          "Inkubatsiya: 21 kun"
+        ],
+        "features": [
+          "Sovuqqa juda chidamli (qalin pat), issiqda qiynaladi — soya kerak",
+          "Oyoqlari patli: nam va loy kasallik keltiradi, to‘shama quruq bo‘lsin",
+          "Xulqi tinch, keng joy kerak"
+        ]
+      },
+      "growth": {
+        "birth": 0.04,
+        "adult_f": 4.0,
+        "adult_m": 5.0,
+        "maturity_d": 225,
+        "adg": [
+          15,
+          25
+        ]
+      },
+      "tip": "Harakati kam — semirib ketmasligi uchun omuxta yem, don va yashil o‘tni me’yorida bering.",
+      "photo": {
+        "local": "/static/img/breeds/brahma.jpg",
+        "caption": "Brahma tipidagi og‘ir tovuq"
+      }
+    },
+    {
       "id": "big6",
       "species": "kurka",
       "name": "Big-6 kurkasi",
@@ -1878,10 +1980,8 @@
       },
       "tip": "Big-6 erkaklari 18–20 haftalikda eng yaxshi narx-sifat nisbatida so‘yiladi.",
       "photo": {
-        "file": "White_turkey_(32126275356).jpg",
-        "author": "",
-        "license": "",
-        "caption": "Oq kurka (namuna rasm)"
+        "local": "/static/img/breeds/big6.jpg",
+        "caption": "Oq keng ko‘krakli kurka"
       }
     },
     {
@@ -1931,9 +2031,7 @@
       },
       "tip": "So‘yishni 50–55 kunda qiling: keyin tullash boshlanadi va go‘sht sifati pasayadi.",
       "photo": {
-        "file": "Pekin_Ducks_cropped.jpg",
-        "author": "Katie Chodil",
-        "license": "CC BY 2.0"
+        "local": "/static/img/breeds/pekin.jpg"
       }
     },
     {
@@ -1991,6 +2089,59 @@
       }
     },
     {
+      "id": "xitoy_goz",
+      "species": "goz",
+      "name": "Xitoy g‘ozi",
+      "direction": [
+        "go‘sht",
+        "qo‘riqchi"
+      ],
+      "palette": {
+        "body": "#b39a80",
+        "patch": "#f2ede6",
+        "accent": "#3a2c22",
+        "pattern": "belly"
+      },
+      "profile": {
+        "white": 0.29,
+        "grey": 0.05,
+        "brown": 0.35,
+        "gold": 0.26,
+        "aspect": 0.68
+      },
+      "origin": "Sharqiy Osiyo (yovvoyi qo‘ng‘ir g‘ozdan kelib chiqqan).",
+      "summary": "Yaylovda boqiladigan, hushyor va shovqinli — yaxshi qo‘riqchi g‘oz.",
+      "general": {
+        "weight_f": "4–4,5 kg",
+        "weight_m": "4,5–5,5 kg",
+        "height": "80–90 sm",
+        "productivity": [
+          "Tuxum: yiliga 40–80 dona (ba’zi chiziqlarda ko‘proq)",
+          "Inkubatsiya: 28–31 kun",
+          "Asosan yaylov o‘tida boqiladi"
+        ],
+        "features": [
+          "Sovuq va kasalliklarga chidamli",
+          "Shovqinli va hududiga o‘ch — qo‘shnilarga xalaqit berishi mumkin, lekin yaxshi qo‘riqchi"
+        ]
+      },
+      "growth": {
+        "birth": 0.09,
+        "adult_f": 4.25,
+        "adult_m": 5.0,
+        "maturity_d": 120,
+        "adg": [
+          40,
+          60
+        ]
+      },
+      "tip": "Yaylov maydoni bo‘lsa, qo‘shimcha don kam talab qiladi va xo‘jalikni begonalardan qo‘riqlaydi.",
+      "photo": {
+        "local": "/static/img/breeds/xitoy_goz.jpg",
+        "caption": "Xitoy g‘ozi tipi"
+      }
+    },
+    {
       "id": "yapon_bedana",
       "species": "bedana",
       "name": "Yapon bedanasi",
@@ -2037,9 +2188,7 @@
       },
       "tip": "1 m² katakda 50–60 tagacha bedana saqlash mumkin — kichik xo‘jalik uchun qulay.",
       "photo": {
-        "file": "3_Japanese_quails_less_than_1_year_old.JPG",
-        "author": "BrokenSphere",
-        "license": ""
+        "local": "/static/img/breeds/yapon_bedana.jpg"
       }
     }
   ]
