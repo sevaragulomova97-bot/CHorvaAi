@@ -234,7 +234,9 @@
   };
   CH.photoUrl = function (breed, width) {
     if (!breed || !breed.photo) return "";
-    if (breed.photo.local) return breed.photo.local;  // ilova ichidagi rasm (oflayn ham ishlaydi)
+    if (breed.photo.local) {  // ilova ichidagi rasm (oflayn ham ishlaydi); versiya — eski keshni chetlab o‘tish uchun
+      return breed.photo.local + "?v=" + encodeURIComponent((window.CHORVA_CONFIG || {}).version || "");
+    }
     if (!breed.photo.file) return "";
     return "https://commons.wikimedia.org/wiki/Special:FilePath/" +
       encodeURIComponent(breed.photo.file.replace(/ /g, "_")) + "?width=" + (width || 500);

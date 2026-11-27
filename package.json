@@ -1,6 +1,6 @@
 {
   "name": "chorva-ai",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "private": true,
   "description": "Chorva AI — Android APK (Capacitor) qobig‘i",
   "scripts": {

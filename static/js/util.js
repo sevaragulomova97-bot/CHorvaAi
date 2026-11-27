@@ -96,7 +96,7 @@
 
   /* Bilimlar bazasi (oflayn ham ishlashi uchun statik fayldan olinadi) */
   CH.loadData = function () {
-    return fetch("/static/data/data.json").then(function (r) {
+    return fetch("/static/data/data.json?v=" + encodeURIComponent(cfg.version || "")).then(function (r) {
       if (!r.ok) throw new Error("Ma’lumotlar bazasi yuklanmadi");
       return r.json();
     }).then(function (d) {

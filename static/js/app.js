@@ -43,8 +43,17 @@
 
   function registerSW() {
     if (!("serviceWorker" in navigator) || window.Capacitor || location.protocol === "file:") return;
+    var hadController = !!navigator.serviceWorker.controller, reloaded = false;
+    navigator.serviceWorker.addEventListener("controllerchange", function () {
+      // Yangi versiya o‘rnatildi — eski fayllar qolmasligi uchun sahifa bir marta yangilanadi
+      if (!hadController || reloaded) return;
+      reloaded = true;
+      location.reload();
+    });
     window.addEventListener("load", function () {
-      navigator.serviceWorker.register("/sw.js", { scope: "/" }).catch(function () { /* SW ixtiyoriy */ });
+      navigator.serviceWorker.register("/sw.js", { scope: "/" }).then(function (reg) {
+        reg.update();
+      }).catch(function () { /* SW ixtiyoriy */ });
     });
   }
 

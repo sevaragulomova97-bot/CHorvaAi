@@ -18,7 +18,7 @@ const SHELL = [
   "/static/js/settings.js?v=__VERSION__",
   "/static/js/app.js?v=__VERSION__",
   "/static/vendor/chart.umd.min.js?v=__VERSION__",
-  "/static/data/data.json",
+  "/static/data/data.json?v=__VERSION__",
   "/static/icons/icon-192.png",
   "/static/icons/icon-512.png",
   "/static/icons/apple-touch-icon.png"
@@ -27,7 +27,8 @@ const SHELL = [
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(VERSION)
-      .then((cache) => Promise.allSettled(SHELL.map((url) => cache.add(url))))
+      // cache: "reload" — brauzerning HTTP keshini chetlab o‘tib, serverdan yangi nusxani oladi
+      .then((cache) => Promise.allSettled(SHELL.map((url) => cache.add(new Request(url, { cache: "reload" })))))
       .then(() => self.skipWaiting())
   );
 });

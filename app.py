@@ -34,7 +34,7 @@ from werkzeug.middleware.proxy_fix import ProxyFix
 # ----------------------------------------------------------------------------
 # Sozlamalar (hammasi muhit o‘zgaruvchilari orqali o‘zgartiriladi)
 # ----------------------------------------------------------------------------
-APP_VERSION = "1.4.2"
+APP_VERSION = "1.4.3"
 BASE_DIR = Path(__file__).resolve().parent
 
 
@@ -181,6 +181,11 @@ def add_headers(resp):
             "style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; "
             "worker-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'self'",
         )
+    if request.path.startswith("/static/"):
+        if request.args.get("v"):
+            resp.headers["Cache-Control"] = "public, max-age=31536000, immutable"  # versiyali fayl o‘zgarmaydi
+        else:
+            resp.headers["Cache-Control"] = "no-cache"  # versiyasiz — har safar server bilan tekshiriladi
     if request.path.startswith("/api/"):
         origin = request.headers.get("Origin")
         if origin and ("*" in ALLOWED_ORIGINS or origin in ALLOWED_ORIGINS):
