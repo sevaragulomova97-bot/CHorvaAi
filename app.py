@@ -34,7 +34,7 @@ from werkzeug.middleware.proxy_fix import ProxyFix
 # ----------------------------------------------------------------------------
 # Sozlamalar (hammasi muhit o‘zgaruvchilari orqali o‘zgartiriladi)
 # ----------------------------------------------------------------------------
-APP_VERSION = "1.1.0"
+APP_VERSION = "1.2.0"
 BASE_DIR = Path(__file__).resolve().parent
 
 
@@ -118,7 +118,9 @@ def _gompertz(breed, sex):
     frac = g.get("curve_frac", 0.9)  # yetilish yoshida asimptotaning qancha qismi
     a = adult / frac
     b = math.log(a / g["birth"])
-    k = math.log(b / -math.log(frac)) / g["maturity_d"]
+    # Og‘irroq jins (odatda erkak) kechroq yetiladi: yetilish muddati vazn nisbatining kub ildiziga mutanosib
+    maturity = g["maturity_d"] * (adult / g["adult_f"]) ** (1 / 3)
+    k = math.log(b / -math.log(frac)) / maturity
     return a, b, k
 
 

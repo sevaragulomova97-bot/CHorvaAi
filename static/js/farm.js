@@ -60,8 +60,8 @@
       return { cls: "ok", text: "Katta yoshdagi hayvon: vazn barqaror bo‘lishi me’yor. Sog‘in yoki tuxumdor bo‘lsa, mahsuldorlikni kuzating." };
     }
     var target = st.normAdg != null ? st.normAdg : (b.growth.adg[0] + b.growth.adg[1]) / 2;
-    var lo = st.normAdg != null ? target * 0.75 : b.growth.adg[0];
-    var hi = st.normAdg != null ? target * 1.35 : b.growth.adg[1] * 1.2;
+    var lo = st.normAdg != null ? Math.min(target * 0.75, b.growth.adg[0]) : b.growth.adg[0];
+    var hi = st.normAdg != null ? Math.max(target * 1.3, b.growth.adg[1]) : b.growth.adg[1] * 1.2;
     var range = "kutiladigan: " + CH.fmt(lo, 0) + "–" + CH.fmt(hi, 0) + " g/kun";
     if (adg < 0) return { cls: "bad", text: "Vazn kamaygan (" + CH.signed(adg, 0) + " g/kun). Ozuqa, suv, gijja va sog‘liqni zudlik bilan tekshiring." };
     if (adg < lo) return { cls: "bad", text: "Kunlik o‘sish me’yordan past (" + range + "). Ratsionni energiya va oqsilga boyiting, gijjaga qarshi ishlov o‘tkazing." };
@@ -138,9 +138,10 @@
         page.innerHTML = '<div class="empty-state"><div class="big">🔍</div><h2>Hayvon topilmadi</h2><a class="btn btn-primary" href="#/mening">Mening hayvonlarim</a></div>';
         return;
       }
-      var b = br(a), s = sp(a), st = computeStats(a, recs);
+      var b = br(a), s = sp(a), st = computeStats(a, recs), chartHtml = "";
       var age = CH.growth.ageDays(a.birth);
-      var html = '<div class="animal-hero"><div class="animal-thumb">' + thumb(a) + "</div><div>" +
+      var html = '<div class="animal-grid"><div class="col-a">' +
+        '<div class="animal-hero"><div class="animal-thumb">' + thumb(a) + "</div><div>" +
         "<h1>" + CH.esc(a.name) + "</h1>" +
         '<div class="muted small">' + s.emoji + " " + CH.esc(b.name) + " · " + CH.esc(s.name) + "</div>" +
         '<div class="muted small">' + (a.sex === "erkak" ? "♂ Erkak" : "♀ Urg‘ochi") + (age != null ? " · " + CH.growth.ageText(age) : "") +
@@ -171,7 +172,7 @@
           '<div class="callout ' + st.status.cls + '">' + CH.esc(st.status.text) + "</div>" +
           '<p class="muted small">Ozuqa miqdori tirik vaznning ' + CH.fmt(s.ration_pct[0]) + "–" + CH.fmt(s.ration_pct[1]) + " % i bo‘yicha hisoblangan taxminiy ko‘rsatkich.</p></div>";
 
-        html += '<div class="panel"><h2>📈 O‘sish grafigi</h2><div class="chart-box"><canvas id="chWeight"></canvas></div>' +
+        chartHtml = '<div class="panel"><h2>📈 O‘sish grafigi</h2><div class="chart-box"><canvas id="chWeight"></canvas></div>' +
           (recs.length > 1 ? '<h3>Kunlik o‘sish (g/kun)</h3><div class="chart-box short"><canvas id="chAdg"></canvas></div>'
             : '<p class="muted small">Kunlik o‘sish grafigi uchun kamida 2 ta yozuv kerak.</p>') + "</div>";
       }
@@ -185,6 +186,7 @@
         }).join("") + '</div><p class="muted small">⏰ — yaqin 45 kun ichida; ✔ — yoshi o‘tgan (o‘tkazilganini tekshiring).</p></div>';
       }
 
+      html += '</div><div class="col-b">' + chartHtml;
       html += '<div class="panel"><h2>🗂 Tarix</h2><div class="history">' + (recs.length ? recs.slice().reverse().map(function (x, i, arr) {
         var p = arr[i + 1];
         var diff = p ? x.weight - p.weight : null;
@@ -194,7 +196,7 @@
           "<small>" + CH.esc(CH.dateText(x.date)) + " · " + (SOURCE_TEXT[x.source] || "") +
           (x.bcs ? " · BCS " + CH.fmt(x.bcs, 1) : "") + "</small>" + (x.note ? "<small>" + CH.esc(x.note) + "</small>" : "") + "</div>" +
           '<button type="button" class="icon-btn" data-del="' + x.id + '" aria-label="Yozuvni o‘chirish">🗑</button></div>';
-      }).join("") : '<p class="muted">Yozuvlar yo‘q.</p>') + "</div></div>";
+      }).join("") : '<p class="muted">Yozuvlar yo‘q.</p>') + "</div></div></div></div>";
 
       page.innerHTML = html;
       CH.$("#btnMonthly", page).addEventListener("click", function () { openRecordForm(a, recs); });

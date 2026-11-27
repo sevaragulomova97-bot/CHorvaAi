@@ -54,6 +54,9 @@
         '<div class="card-sub">' + sp.emoji + " " + CH.esc(sp.name) + "</div>" + CH.dirTags(b.direction) + "</div></button>";
     }).join("");
     CH.$("#catalogEmpty").hidden = list.length > 0;
+    var all = CH.data.breeds.filter(function (b) { return CH.data.species[b.species].group === st.group; });
+    CH.$("#catalogStats").innerHTML = '<div><b>' + speciesOfGroup().length + "</b><small>tur</small></div>" +
+      "<div><b>" + all.length + "</b><small>zot</small></div><div><b>4</b><small>bo‘lim</small></div>";
   }
 
   /* ---------- Zot tafsilotlari ---------- */
@@ -64,8 +67,7 @@
 
   function tabGeneral(b, sp) {
     var g = b.general;
-    return "<p>" + CH.esc(b.summary) + "</p>" +
-      '<div class="stat-grid">' +
+    return '<div class="stat-grid">' +
       '<div class="stat"><b>' + CH.esc(g.weight_f) + "</b><small>Urg‘ochisining vazni</small></div>" +
       '<div class="stat"><b>' + CH.esc(g.weight_m) + "</b><small>Erkagining vazni</small></div>" +
       '<div class="stat"><b>' + CH.esc(g.height) + "</b><small>" + CH.esc(sp.size_label) + "</small></div>" +
@@ -129,11 +131,14 @@
     var b = CH.breedById[id];
     if (!b) return;
     var sp = CH.data.species[b.species];
-    var html = '<div class="breed-hero">' + CH.breedArt(b, 960) +
+    var html = '<div class="breed-hero"><div class="bh-art">' + CH.breedArt(b, 960) + '</div><div class="bh-info">' +
       '<h2 id="sheetTitle">' + CH.esc(b.name) + "</h2>" +
       '<div class="muted small">' + sp.emoji + " " + CH.esc(sp.name) + " · " + CH.esc(CH.data.groups[sp.group].name) + "</div>" +
       CH.dirTags(b.direction) + (b.photo && b.photo.caption && b.photo.local ? '<span class="credit">📷 ' + CH.esc(b.photo.caption) + "</span>" : "") +
-      (CH.photosOn() ? CH.photoCredit(b) : "") + "</div>" +
+      (CH.photosOn() ? CH.photoCredit(b) : "") +
+      '<p class="bh-summary">' + CH.esc(b.summary) + "</p>" +
+      '<div class="bh-facts"><span>♀ ' + CH.esc(b.general.weight_f) + "</span><span>♂ " + CH.esc(b.general.weight_m) + "</span><span>📏 " + CH.esc(b.general.height) + "</span></div>" +
+      "</div></div>" +
       '<div class="tabs" role="tablist">' + TABS.map(function (t) {
         return '<button type="button" class="tab" role="tab" data-tab="' + t.id + '"><span>' + t.icon + "</span>" + t.name + "</button>";
       }).join("") + "</div>" +

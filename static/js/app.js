@@ -12,7 +12,7 @@
     document.body.classList.toggle("on-scan", home);
     CH.$("#bottomNav").hidden = home;
     var navKey = name === "animal" ? "farm" : name;
-    CH.$$("#bottomNav a").forEach(function (a) { a.classList.toggle("active", a.dataset.nav === navKey); });
+    CH.$$("#bottomNav a, #topNav a").forEach(function (a) { a.classList.toggle("active", a.dataset.nav === navKey); });
     CH.$("#topMy").hidden = name === "farm" || name === "animal";
     if (home && !onboarding) CH.camera.start(); else CH.camera.stop();
     if (name !== "animal") CH.farm.destroyCharts();

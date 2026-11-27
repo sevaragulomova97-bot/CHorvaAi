@@ -223,7 +223,7 @@ body.on-scan { background: #000; overflow: hidden; }
 .breed-hero { margin: -.4rem -1.1rem 0; padding: .4rem 1.1rem 1rem; background: linear-gradient(170deg, #e2f5e8, #c3ead2); border-radius: 0 0 24px 24px; }
 :root[data-theme="dark"] .breed-hero { background: linear-gradient(170deg, #193020, #173d27); }
 @media (prefers-color-scheme: dark) { :root[data-theme="auto"] .breed-hero { background: linear-gradient(170deg, #193020, #173d27); } }
-.breed-hero .art-wrap { aspect-ratio: 4 / 3; max-height: 300px; border-radius: 18px; margin: .2rem auto 0; max-width: 420px; }
+.breed-hero .art-wrap { aspect-ratio: 4 / 3; max-height: 300px; border-radius: 18px; margin: .2rem auto 0; max-width: 420px; box-shadow: 0 10px 30px rgba(10,60,30,.18); }
 .breed-hero .art-wrap > svg { width: 86%; }
 .breed-hero h2 { font-size: 1.5rem; margin: .2rem 0 .1rem; }
 .tabs { position: sticky; top: -1px; z-index: 2; display: grid; grid-template-columns: repeat(4, 1fr); gap: .25rem; padding: .5rem 0; background: var(--card); }
@@ -407,9 +407,158 @@ body.on-scan { background: #000; overflow: hidden; }
 .toast.err { background: #8a1f1f; }
 body.on-scan .toast { top: calc(var(--topbar-h) + var(--safe-t) + 3.4rem); }
 
-@media (min-width: 900px) {
-  .scan-dock { max-width: 640px; margin: 0 auto; width: 100%; border-radius: 26px 26px 0 0; }
-}
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+
+
+/* ==========================================================================
+   Umumiy bezaklar: banner, qalqib turuvchi kartochkalar, hover effektlari
+   ========================================================================== */
+.top-nav { display: none; }
+.page-banner {
+  position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 1.1rem 1.2rem; margin-bottom: 1rem; border-radius: 22px; color: #fff;
+  background: radial-gradient(circle at 85% 20%, rgba(255,255,255,.18), transparent 40%), linear-gradient(135deg, var(--g800), var(--g500));
+  box-shadow: 0 14px 34px rgba(15,107,58,.28);
+}
+.page-banner::after { content: "🐄🐑🐔"; position: absolute; right: -10px; bottom: -18px; font-size: 4.5rem; opacity: .12; letter-spacing: -8px; pointer-events: none; }
+.page-banner h1 { font-size: 1.3rem; margin: 0 0 .2rem; }
+.page-banner p { margin: 0; opacity: .9; font-size: .88rem; max-width: 46ch; }
+.banner-stats { display: none; gap: .5rem; }
+.banner-stats div { min-width: 74px; padding: .55rem .7rem; border-radius: 16px; text-align: center; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.25); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.banner-stats b { display: block; font-size: 1.35rem; line-height: 1.1; }
+.banner-stats small { font-size: .72rem; opacity: .9; }
+.bh-summary { margin: .45rem 0 .35rem; font-size: .93rem; }
+.bh-facts { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .3rem; }
+.bh-facts span { font-size: .78rem; font-weight: 700; padding: .3rem .6rem; border-radius: 999px; background: rgba(255,255,255,.7); color: var(--g800); }
+:root[data-theme="dark"] .bh-facts span { background: rgba(0,0,0,.25); color: #c9f2d7; }
+@media (prefers-color-scheme: dark) { :root[data-theme="auto"] .bh-facts span { background: rgba(0,0,0,.25); color: #c9f2d7; } }
+.bh-info .tags { margin-top: .35rem; }
+
+.card, .animal-item, .panel, .stat, .metric, .set-group, .summary div {
+  transition: transform .22s cubic-bezier(.2,.8,.2,1), box-shadow .22s ease, border-color .22s ease;
+}
+.card-art .photo { transition: opacity .35s, transform .5s cubic-bezier(.2,.8,.2,1); }
+@media (hover: hover) {
+  .card:hover { transform: translateY(-6px); box-shadow: 0 18px 38px rgba(10,60,30,.18); border-color: var(--g400); }
+  .card:hover .card-art .photo { transform: scale(1.06); }
+  .animal-item:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(10,60,30,.15); border-color: var(--g400); }
+  .stat:hover, .metric:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+  .summary div:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+  .btn-primary:hover { filter: brightness(1.07); box-shadow: 0 8px 22px rgba(22,135,74,.42); }
+  .btn-outline:hover, .btn-secondary:hover { filter: brightness(.97); }
+  .chip:hover:not(.active) { border-color: var(--g400); color: var(--g700); }
+  .dock-btn:hover { background: rgba(255,255,255,.16); transform: translateY(-2px); }
+  .tool-btn:hover { background: rgba(0,0,0,.65); }
+  .tab:hover:not(.active) { background: var(--g100); color: var(--g700); }
+}
+
+/* ---------- Planshet (600px+) ---------- */
+@media (min-width: 600px) {
+  .banner-stats { display: flex; }
+  .page-banner h1 { font-size: 1.55rem; }
+  .cards { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
+  .breed-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; align-items: center; padding-top: .8rem; }
+  .breed-hero .art-wrap { margin: 0; max-height: none; max-width: none; }
+}
+
+/* ==========================================================================
+   Kompyuter (900px+): keng sahifa, tepa menyu, markazda qalqib chiquvchi oynalar
+   ========================================================================== */
+@media (min-width: 900px) {
+  :root { --topbar-h: 66px; --nav-h: 0px; }
+  body:not(.on-scan) {
+    background:
+      radial-gradient(1200px 500px at 10% -10%, rgba(34,165,92,.10), transparent 60%),
+      radial-gradient(900px 500px at 100% 0%, rgba(242,165,22,.07), transparent 60%),
+      var(--bg);
+    background-attachment: fixed;
+  }
+  .topbar { padding: var(--safe-t) 2rem 0; }
+  body:not(.on-scan) .topbar {
+    background: rgba(10, 85, 48, .92); backdrop-filter: blur(14px) saturate(1.3); -webkit-backdrop-filter: blur(14px) saturate(1.3);
+  }
+  .brand { font-size: 1.3rem; }
+  .brand img { width: 36px; height: 36px; }
+  .top-nav { display: flex; gap: .25rem; margin: 0 auto; padding: .3rem; border-radius: 999px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.14); }
+  .top-nav a { display: flex; align-items: center; gap: .4rem; padding: .55rem 1rem; border-radius: 999px; color: rgba(255,255,255,.85); text-decoration: none; font-weight: 700; font-size: .92rem; transition: background .2s, color .2s; }
+  .top-nav a:hover { background: rgba(255,255,255,.14); color: #fff; }
+  .top-nav a.active { background: #fff; color: var(--g800); box-shadow: 0 4px 14px rgba(0,0,0,.15); }
+  #topMy { display: none; }
+  .bottom-nav { display: none !important; }
+  .screen-page { padding: calc(var(--topbar-h) + var(--safe-t) + 1.6rem) 0 3rem; }
+  .page { max-width: 760px; padding: 0 2rem; }
+  .page-wide { max-width: 1240px; }
+  .page-mid { max-width: 1040px; }
+  .toast { bottom: auto; top: calc(var(--topbar-h) + 1rem); }
+
+  /* Katalog */
+  .page-banner { padding: 1.8rem 2rem; border-radius: 28px; }
+  .page-banner h1 { font-size: 2rem; }
+  .page-banner p { font-size: 1rem; }
+  .catalog-tools { display: grid; grid-template-columns: 420px 1fr; gap: 1rem; align-items: center; }
+  .catalog-tools .search { margin: 0; }
+  .cards { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1.25rem; }
+  .card { border-radius: 22px; }
+  .card-body { padding: .85rem 1rem 1rem; }
+  .card-title { font-size: 1.08rem; }
+
+  /* Qalqib chiquvchi oyna (modal) */
+  .sheet-backdrop { background: rgba(5, 20, 12, .5); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); }
+  .sheet {
+    left: 50%; top: 50%; right: auto; bottom: auto; width: min(680px, 92vw); max-width: none; max-height: 86vh;
+    border-radius: 26px; transform: translate(-50%, -50%); opacity: 1;
+    transition: transform .26s cubic-bezier(.2,.8,.2,1), opacity .2s ease;
+    box-shadow: 0 30px 80px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.06);
+  }
+  .sheet.full { width: min(1040px, 94vw); height: auto; max-height: 90vh; }
+  .sheet.enter { transform: translate(-50%, -46%) scale(.96); opacity: 0; }
+  .sheet-handle { display: none; }
+  .sheet-close { top: .9rem; right: .9rem; width: 40px; height: 40px; }
+  .sheet-body { padding: 1.6rem 1.8rem 1.8rem; }
+  .breed-hero { margin: -1.6rem -1.8rem 0; padding: 1.8rem; border-radius: 26px 26px 0 0; grid-template-columns: 1.1fr 1fr; gap: 1.8rem; }
+  .breed-hero h2 { font-size: 2rem; }
+  .tabs { position: sticky; top: -1.6rem; padding: .9rem 0 .6rem; }
+  .tab { font-size: .9rem; padding: .75rem .4rem; }
+  .tab-panel .stat-grid { grid-template-columns: repeat(4, 1fr); }
+  .metrics { grid-template-columns: repeat(4, 1fr); }
+  .sheet:not(.full) .metrics { grid-template-columns: repeat(2, 1fr); }
+  .form .grid2 { gap: .9rem; }
+
+  /* Mening hayvonlarim */
+  .greeting { padding: 1.6rem 2rem; border-radius: 26px; }
+  .greeting h1 { font-size: 1.7rem; }
+  .summary { gap: 1rem; }
+  .summary div { padding: 1.1rem; border-radius: 20px; }
+  .summary b { font-size: 2rem; }
+  .animal-list { grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1rem; }
+  .animal-item { padding: .9rem; border-radius: 20px; }
+  .empty-state { padding: 3rem; }
+  .animal-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 1.4rem; align-items: start; }
+  .animal-grid .col-a { position: sticky; top: calc(var(--topbar-h) + 1.2rem); }
+  .panel { border-radius: 22px; padding: 1.3rem; }
+  .chart-box { height: 300px; }
+  .chart-box.short { height: 220px; }
+
+  /* Sozlamalar: ikki ustun */
+  #settingsPage { columns: 2; column-gap: 1.2rem; }
+  #settingsPage .page-head { column-span: all; }
+  .set-group { break-inside: avoid; border-radius: 22px; }
+
+  /* Skaner: suzib turuvchi boshqaruv paneli */
+  .scan-dock {
+    position: absolute; left: 50%; bottom: 1.6rem; transform: translateX(-50%); width: min(640px, 92vw);
+    padding: .8rem 1.4rem; border-radius: 30px; background: rgba(8, 20, 13, .62);
+    backdrop-filter: blur(16px) saturate(1.3); -webkit-backdrop-filter: blur(16px) saturate(1.3);
+    border: 1px solid rgba(255,255,255,.14); box-shadow: 0 20px 50px rgba(0,0,0,.45);
+  }
+  .viewfinder { width: min(52vw, 620px); top: 45%; }
+  .cam-tools { right: 1.6rem; }
+  .tool-btn { width: 64px; height: 64px; border-radius: 20px; }
+  .cam-fallback-card { max-width: 440px; padding: 2rem; border-radius: 28px; box-shadow: 0 30px 70px rgba(0,0,0,.45); }
+}
+
+@media (min-width: 1400px) {
+  .cards { grid-template-columns: repeat(5, 1fr); }
 }

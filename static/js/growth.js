@@ -10,7 +10,9 @@
     var frac = g.curve_frac || 0.9;
     var A = adult / frac;
     var b = Math.log(A / g.birth);
-    var k = Math.log(b / -Math.log(frac)) / g.maturity_d;
+    // Og‘irroq jins (odatda erkak) kechroq yetiladi
+    var maturity = g.maturity_d * Math.pow(adult / g.adult_f, 1 / 3);
+    var k = Math.log(b / -Math.log(frac)) / maturity;
     return { A: A, b: b, k: k };
   }
 

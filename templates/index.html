@@ -24,6 +24,12 @@
       <img src="/static/icons/icon-192.png" alt="" width="30" height="30">
       <span>Chorva <b>AI</b></span>
     </a>
+    <nav class="top-nav" id="topNav" aria-label="Asosiy menyu">
+      <a href="#/" data-nav="home"><span>📷</span>Skaner</a>
+      <a href="#/katalog/uy" data-nav="catalog"><span>📚</span>Katalog</a>
+      <a href="#/mening" data-nav="farm"><span>📋</span>Mening hayvonlarim</a>
+      <a href="#/sozlamalar" data-nav="settings"><span>⚙️</span>Sozlamalar</a>
+    </nav>
     <div class="topbar-actions">
       <a class="top-btn" href="#/mening" id="topMy" aria-label="Mening hayvonlarim">
         <span aria-hidden="true">📋</span><span class="top-btn-label">Mening hayvonlarim</span>
@@ -98,7 +104,15 @@
 
     <!-- B. Katalog -->
     <section class="screen screen-page" id="screen-catalog" data-screen="catalog" hidden>
-      <div class="page">
+      <div class="page page-wide">
+        <div class="page-banner">
+          <div>
+            <h1>📚 Zotlar katalogi</h1>
+            <p>O‘zbekiston sharoitida boqiladigan zotlar: ratsion, semirtirish sirlari va emlash jadvali</p>
+          </div>
+          <div class="banner-stats" id="catalogStats"></div>
+        </div>
+        <div class="catalog-tools">
         <div class="seg" role="tablist" aria-label="Katalog bo‘limi">
           <a class="seg-btn" href="#/katalog/uy" data-group="uy" role="tab">🐄 Uy hayvonlari</a>
           <a class="seg-btn" href="#/katalog/parranda" data-group="parranda" role="tab">🐔 Parrandalar</a>
@@ -107,6 +121,7 @@
           <span aria-hidden="true">🔎</span>
           <input type="search" id="catalogSearch" placeholder="Zot yoki tur nomini yozing…" autocomplete="off">
         </label>
+        </div>
         <div class="chips" id="speciesChips"></div>
         <div class="cards" id="catalogGrid"></div>
         <p class="empty" id="catalogEmpty" hidden>Hech narsa topilmadi.</p>
@@ -115,17 +130,17 @@
 
     <!-- C. Mening hayvonlarim -->
     <section class="screen screen-page" id="screen-farm" data-screen="farm" hidden>
-      <div class="page" id="farmPage"></div>
+      <div class="page page-wide" id="farmPage"></div>
     </section>
 
     <!-- C2. Bitta hayvon sahifasi -->
     <section class="screen screen-page" id="screen-animal" data-screen="animal" hidden>
-      <div class="page" id="animalPage"></div>
+      <div class="page page-wide" id="animalPage"></div>
     </section>
 
     <!-- Sozlamalar -->
     <section class="screen screen-page" id="screen-settings" data-screen="settings" hidden>
-      <div class="page" id="settingsPage"></div>
+      <div class="page page-mid" id="settingsPage"></div>
     </section>
   </main>
 

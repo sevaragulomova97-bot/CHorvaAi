@@ -87,8 +87,10 @@ class ApiTest(unittest.TestCase):
 
     def test_growth_curve(self):
         ross = chorva.BREED_BY_ID["ross308"]
-        self.assertAlmostEqual(chorva.expected_weight(ross, "erkak", 0), 0.042, places=3)
-        self.assertAlmostEqual(chorva.expected_weight(ross, "erkak", 42), 3.0 * 0.5 / 0.5, delta=0.01)
+        self.assertAlmostEqual(chorva.expected_weight(ross, "urgochi", 0), 0.042, places=3)
+        self.assertAlmostEqual(chorva.expected_weight(ross, "urgochi", 42), 2.7, delta=0.01)
+        bull = chorva.BREED_BY_ID["simmental"]
+        self.assertTrue(1.0 < chorva.expected_adg_kg(bull, "erkak", 300) < 1.6)
         cow = chorva.BREED_BY_ID["golshtin"]
         self.assertTrue(250 < chorva.expected_weight(cow, "urgochi", 365) < 400)
 
