@@ -1,7 +1,6 @@
 /* Chorva AI service worker — oflayn ishlash va tez yuklanish uchun.
    versiya raqamini server (app.py) avtomatik qo‘yadi. */
 const VERSION = "chorva-__VERSION__";
-const IMG_CACHE = "chorva-photos-v1";
 const SHELL = [
   "/",
   "/manifest.json",
@@ -24,7 +23,6 @@ const SHELL = [
   "/static/icons/icon-512.png",
   "/static/icons/apple-touch-icon.png"
 ];
-const PHOTO_HOSTS = ["commons.wikimedia.org", "upload.wikimedia.org"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -37,16 +35,10 @@ self.addEventListener("install", (event) => {
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys()
-      .then((keys) => Promise.all(keys.filter((k) => k !== VERSION && k !== IMG_CACHE).map((k) => caches.delete(k))))
+      .then((keys) => Promise.all(keys.filter((k) => k !== VERSION).map((k) => caches.delete(k))))
       .then(() => self.clients.claim())
   );
 });
-
-async function trimCache(name, max) {
-  const cache = await caches.open(name);
-  const keys = await cache.keys();
-  for (let i = 0; i < keys.length - max; i++) await cache.delete(keys[i]);
-}
 
 self.addEventListener("fetch", (event) => {
   const req = event.request;
@@ -64,20 +56,6 @@ self.addEventListener("fetch", (event) => {
         caches.open(VERSION).then((c) => c.put("/", copy));
         return res;
       }).catch(() => caches.match("/"))
-    );
-    return;
-  }
-
-  // Wikimedia fotosuratlari: avval kesh (oflayn ham ko‘rinadi)
-  if (PHOTO_HOSTS.includes(url.hostname)) {
-    event.respondWith(
-      caches.open(IMG_CACHE).then((cache) => cache.match(req).then((hit) => hit || fetch(req).then((res) => {
-        if (res && (res.ok || res.type === "opaque")) {
-          cache.put(req, res.clone());
-          trimCache(IMG_CACHE, 120);
-        }
-        return res;
-      })))
     );
     return;
   }

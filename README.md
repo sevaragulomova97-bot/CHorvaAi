@@ -163,8 +163,7 @@ Natijani saqlashdan oldin qo‘lda tuzatish mumkin.
 
 ## 🖼 Rasmlar va litsenziyalar
 
-- **20 zotning** fotosuratlari ilova ichida saqlanadi: `static/img/breeds/<zot_id>.jpg` — internetsiz va APK’da ham ko‘rinadi. Rasmni almashtirish uchun shu papkadagi faylni xuddi shu nom bilan almashtiring.
-- Qolgan 3 zot (Ross-308, Xonaki tovuq, Kuban g‘ozi) fotosuratlari **Wikimedia Commons**’dan (erkin litsenziyalar) havola orqali yuklanadi; muallif va manba rasm ostida va Sozlamalar → Fotosurat mualliflari bo‘limida ko‘rsatilgan.
+- Barcha **23 zotning** fotosuratlari ilova ichida saqlanadi: `static/img/breeds/<zot_id>.jpg` — internetsiz va APK’da ham ko‘rinadi. Rasmni almashtirish uchun shu papkadagi faylni xuddi shu nom bilan almashtiring.
 - Rasm ochilmasa, uning o‘rnida ilovaning o‘z SVG illyustratsiyasi ko‘rinadi.
 - Chart.js — MIT litsenziyasi (`static/vendor/chart.js-LICENSE.md`).
 

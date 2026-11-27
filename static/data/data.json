@@ -1720,10 +1720,7 @@
       },
       "tip": "Ross-308 ni 42 kundan ortiq boqish iqtisodiy jihatdan foydasiz: yem sarfi oshadi, oyoq muammolari ko‘payadi.",
       "photo": {
-        "file": "Image_of_8_weeks_old_broiler_chicken.jpg",
-        "author": "AJ.Adekunle",
-        "license": "",
-        "caption": "Broyler tovuq (namuna rasm)"
+        "local": "/static/img/breeds/ross308.jpg"
       }
     },
     {
@@ -1826,9 +1823,7 @@
       },
       "tip": "Xonaki tovuqlar ham omuxta yem va yorug‘lik (14–16 soat) bilan ancha ko‘p tuxum beradi.",
       "photo": {
-        "file": "Rooster_and_Hen.jpg",
-        "author": "SimonWaldherr",
-        "license": ""
+        "local": "/static/img/breeds/xonaki_tovuq.jpg"
       }
     },
     {
@@ -2082,10 +2077,7 @@
       },
       "tip": "Yaylov mavjud bo‘lsa, g‘ozlarni boqish xarajati boshqa parrandalarga qaraganda ancha arzon.",
       "photo": {
-        "file": "Greylag_Goose_Grauwe_Gans.JPG",
-        "author": "Look Sharp!",
-        "license": "",
-        "caption": "Kulrang xonaki g‘oz (namuna rasm)"
+        "local": "/static/img/breeds/kuban_goz.jpg"
       }
     },
     {

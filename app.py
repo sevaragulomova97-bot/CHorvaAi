@@ -34,7 +34,7 @@ from werkzeug.middleware.proxy_fix import ProxyFix
 # ----------------------------------------------------------------------------
 # Sozlamalar (hammasi muhit o‘zgaruvchilari orqali o‘zgartiriladi)
 # ----------------------------------------------------------------------------
-APP_VERSION = "1.3.0"
+APP_VERSION = "1.4.0"
 BASE_DIR = Path(__file__).resolve().parent
 
 
@@ -173,7 +173,7 @@ def add_headers(resp):
     if resp.mimetype == "text/html":
         resp.headers.setdefault(
             "Content-Security-Policy",
-            "default-src 'self'; img-src 'self' data: blob: https://commons.wikimedia.org https://upload.wikimedia.org; media-src 'self' blob: mediastream:; "
+            "default-src 'self'; img-src 'self' data: blob:; media-src 'self' blob: mediastream:; "
             "style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; "
             "worker-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'self'",
         )
