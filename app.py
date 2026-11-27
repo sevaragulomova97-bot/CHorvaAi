@@ -34,7 +34,7 @@ from werkzeug.middleware.proxy_fix import ProxyFix
 # ----------------------------------------------------------------------------
 # Sozlamalar (hammasi muhit o‘zgaruvchilari orqali o‘zgartiriladi)
 # ----------------------------------------------------------------------------
-APP_VERSION = "1.4.0"
+APP_VERSION = "1.4.1"
 BASE_DIR = Path(__file__).resolve().parent
 
 
@@ -56,7 +56,11 @@ ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "").strip()
 ANTHROPIC_MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-haiku-5-5").strip()
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "").strip()
 GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.8-flash").strip()
-AI_TIMEOUT = float(os.environ.get("AI_TIMEOUT", "40"))
+# Asosiy model band bo‘lsa (503/429/timeout), navbatdagi modellar sinab ko‘riladi
+GEMINI_FALLBACK_MODELS = [m.strip() for m in os.environ.get(
+    "GEMINI_FALLBACK_MODELS", "gemini-3.1-flash-lite,gemini-2.5-flash").split(",") if m.strip()]
+AI_TIMEOUT = float(os.environ.get("AI_TIMEOUT", "25"))          # bitta so‘rov uchun
+AI_TOTAL_BUDGET = float(os.environ.get("AI_TOTAL_BUDGET", "55"))  # barcha urinishlar uchun jami
 SCAN_LIMIT_PER_MIN = int(os.environ.get("SCAN_LIMIT_PER_MIN", "12"))
 ALLOWED_ORIGINS = [o.strip() for o in os.environ.get("ALLOWED_ORIGINS", "*").split(",") if o.strip()]
 
@@ -374,28 +378,28 @@ def build_prompt(ctx):
     )
 
 
-def call_anthropic(b64, prompt):
+def call_anthropic(b64, prompt, model, timeout):
     resp = requests.post(
         "https://api.anthropic.com/v1/messages",
         headers={"x-api-key": ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01",
                  "content-type": "application/json"},
         json={
-            "model": ANTHROPIC_MODEL,
+            "model": model,
             "max_tokens": 800,
             "messages": [{"role": "user", "content": [
                 {"type": "image", "source": {"type": "base64", "media_type": "image/jpeg", "data": b64}},
                 {"type": "text", "text": prompt},
             ]}],
         },
-        timeout=AI_TIMEOUT,
+        timeout=timeout,
     )
     resp.raise_for_status()
     return "".join(part.get("text", "") for part in resp.json().get("content", []) if part.get("type") == "text")
 
 
-def call_gemini(b64, prompt):
+def call_gemini(b64, prompt, model, timeout):
     resp = requests.post(
-        f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent",
+        f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
         headers={"x-goog-api-key": GEMINI_API_KEY, "Content-Type": "application/json"},
         json={
             "contents": [{"role": "user", "parts": [
@@ -404,11 +408,57 @@ def call_gemini(b64, prompt):
             ]}],
             "generationConfig": {"temperature": 0.2, "responseMimeType": "application/json"},
         },
-        timeout=AI_TIMEOUT,
+        timeout=timeout,
     )
     resp.raise_for_status()
     parts = resp.json()["candidates"][0]["content"]["parts"]
     return "".join(p.get("text", "") for p in parts)
+
+
+RETRY_STATUS = {408, 429, 500, 502, 503, 504, 529}  # vaqtincha band / yuklangan
+
+
+def ai_attempts(provider):
+    """Urinishlar tartibi: (provayder, model). Band bo‘lsa — boshqa model, so‘ng boshqa provayder."""
+    plan = []
+    order = [provider] + [p for p in ("gemini", "anthropic") if p != provider]
+    for prov in order:
+        if prov == "gemini" and GEMINI_API_KEY:
+            plan += [("gemini", GEMINI_MODEL), ("gemini", GEMINI_MODEL)]  # asosiy modelga 2 urinish
+            plan += [("gemini", m) for m in GEMINI_FALLBACK_MODELS if m != GEMINI_MODEL]
+        elif prov == "anthropic" and ANTHROPIC_API_KEY:
+            plan += [("anthropic", ANTHROPIC_MODEL), ("anthropic", ANTHROPIC_MODEL)]
+    return plan
+
+
+def call_ai(provider, b64, prompt):
+    """AI xizmatini chaqiradi: vaqtincha xatolarda qayta urinadi va zaxira modellarga o‘tadi.
+    Qaytaradi: (javob_matni, ishlatilgan_provayder)."""
+    deadline = time.time() + AI_TOTAL_BUDGET
+    last_exc = None
+    skip_models = set()
+    for prov, model in ai_attempts(provider):
+        if (prov, model) in skip_models:
+            continue
+        remaining = deadline - time.time()
+        if remaining < 4:
+            break
+        try:
+            fn = call_gemini if prov == "gemini" else call_anthropic
+            return fn(b64, prompt, model, min(AI_TIMEOUT, remaining)), prov
+        except requests.HTTPError as exc:
+            last_exc = exc
+            status = exc.response.status_code if exc.response is not None else 0
+            app.logger.warning("AI %s/%s: HTTP %s", prov, model, status)
+            if status in RETRY_STATUS:
+                time.sleep(min(1.5, max(0, deadline - time.time() - 4)))
+                continue
+            skip_models.add((prov, model))  # 400/401/403/404 — bu modelda qayta urinish foydasiz
+        except requests.RequestException as exc:  # timeout, ulanish uzilishi
+            last_exc = exc
+            app.logger.warning("AI %s/%s: %s", prov, model, exc.__class__.__name__)
+            skip_models.add((prov, model))
+    raise last_exc or requests.RequestException("AI xizmati mavjud emas")
 
 
 def parse_ai_json(text):
@@ -430,11 +480,11 @@ def _num(value, lo, hi):
 def ai_analyze(provider, jpeg, ctx):
     b64 = base64.b64encode(jpeg).decode()
     prompt = build_prompt(ctx)
-    raw = call_anthropic(b64, prompt) if provider == "anthropic" else call_gemini(b64, prompt)
+    raw, used = call_ai(provider, b64, prompt)
     data = parse_ai_json(raw)
 
     if not data.get("hayvon_bormi", True):
-        return {"animal_found": False,
+        return {"animal_found": False, "_provider": used,
                 "message": "Rasmda qishloq xo‘jaligi hayvoni yoki parrandasi aniqlanmadi. Qayta urinib ko‘ring."}
 
     breed_id = data.get("zot_id") if data.get("zot_id") in BREED_BY_ID else None
@@ -462,6 +512,7 @@ def ai_analyze(provider, jpeg, ctx):
         "condition": str(data.get("holat") or "")[:200],
         "advice_ai": [str(a)[:200] for a in advice[:3]],
         "weight_method": "ai_foto",
+        "_provider": used,
     }
 
 
@@ -583,9 +634,11 @@ def api_scan():
     if provider != "demo":
         try:
             result = ai_analyze(provider, jpeg, ctx)
-        except (requests.RequestException, ValueError, KeyError, IndexError, json.JSONDecodeError) as exc:
+            provider = result.pop("_provider", provider)
+        except (requests.RequestException, ValueError, KeyError, IndexError, TypeError, json.JSONDecodeError) as exc:
             app.logger.warning("AI tahlil xatosi (%s): %s", provider, exc)
-            note = "AI xizmati hozir javob bermadi, shuning uchun demo tahlil ko‘rsatildi."
+            note = ("AI xizmati hozir band (Google/Anthropic serverlari yuklangan), shuning uchun taxminiy demo tahlil "
+                    "ko‘rsatildi. 1–2 daqiqadan keyin qayta skanerlang.")
             provider = "demo"
     if result is None:
         result = demo_analyze(img, jpeg, ctx)

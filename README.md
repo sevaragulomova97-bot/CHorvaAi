@@ -68,7 +68,7 @@ copy .env.example .env
 notepad .env
 ```
 
-Render/Vercel’da: kalitni **Environment Variables** bo‘limiga kiriting. Model nomini `GEMINI_MODEL` (standart: `gemini-3.8-flash`) yoki `ANTHROPIC_MODEL` (standart: `claude-haiku-5-5`) orqali o‘zgartirish mumkin. AI xizmati javob bermasa, ilova avtomatik demo rejimga o‘tadi.
+Render/Vercel’da: kalitni **Environment Variables** bo‘limiga kiriting. Model nomini `GEMINI_MODEL` (standart: `gemini-3.8-flash`) yoki `ANTHROPIC_MODEL` (standart: `claude-haiku-5-5`) orqali o‘zgartirish mumkin. Gemini serverlari band bo‘lsa (503 xatosi yoki javob kechiksa), ilova avval qayta urinadi, so‘ng zaxira modellarga o‘tadi (`GEMINI_FALLBACK_MODELS`, standart: `gemini-3.1-flash-lite,gemini-2.5-flash`); ikkala kalit berilgan bo‘lsa — boshqa xizmatga. Hammasi band bo‘lsa, demo rejimga o‘tadi va buni aniq yozadi.
 
 ⚠️ API kalitni hech qachon GitHub’ga yuklamang — `.env` fayli `.gitignore` ichida.
 

@@ -99,5 +99,47 @@ class ApiTest(unittest.TestCase):
         self.assertEqual(r.headers.get("Access-Control-Allow-Origin"), "*")
 
 
+class AiFallbackTest(unittest.TestCase):
+    """Gemini band bo‘lsa (503) — qayta urinish va zaxira modelga o‘tish."""
+
+    def test_retry_then_fallback(self):
+        import requests
+        calls = []
+
+        class Resp:
+            def __init__(self, code, data=None):
+                self.status_code, self._data = code, data
+
+            def json(self):
+                return self._data
+
+            def raise_for_status(self):
+                if self.status_code >= 400:
+                    raise requests.HTTPError(str(self.status_code), response=self)
+
+        ok_text = ('{"hayvon_bormi": true, "tur_id": "qoramol", "zot_id": "golshtin", "ishonch": 80, '
+                   '"vazn_kg": 520, "boy_sm": 142, "bcs": 3, "holat": "Yaxshi", "tavsiya": ["Suv yetarli bo‘lsin"]}')
+
+        def fake_post(url, headers=None, json=None, timeout=None):
+            calls.append(url.split("/models/")[1].split(":")[0])
+            if len(calls) < 3:
+                return Resp(503)
+            return Resp(200, {"candidates": [{"content": {"parts": [{"text": ok_text}]}}]})
+
+        old = (chorva.requests.post, chorva.GEMINI_API_KEY, chorva.AI_PROVIDER, chorva.time.sleep)
+        chorva.requests.post, chorva.GEMINI_API_KEY, chorva.AI_PROVIDER = fake_post, "test", "auto"
+        chorva.time.sleep = lambda s: None
+        try:
+            client = chorva.app.test_client()
+            data = client.post("/api/scan", data={"image": (io.BytesIO(make_image()), "a.jpg")},
+                               content_type="multipart/form-data").get_json()
+        finally:
+            chorva.requests.post, chorva.GEMINI_API_KEY, chorva.AI_PROVIDER, chorva.time.sleep = old
+        self.assertEqual(data["mode"], "ai")
+        self.assertEqual(data["breed_id"], "golshtin")
+        self.assertEqual(calls[:2], [chorva.GEMINI_MODEL, chorva.GEMINI_MODEL])
+        self.assertEqual(calls[2], chorva.GEMINI_FALLBACK_MODELS[0])
+
+
 if __name__ == "__main__":
     unittest.main()
